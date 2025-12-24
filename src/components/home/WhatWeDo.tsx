@@ -74,11 +74,11 @@ const WhatWeDo = () => {
               <div className={`absolute inset-0 bg-gradient-to-br ${role.gradient} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               <div className="relative rounded-3xl p-8 md:p-10 border border-border/60 bg-card/50 backdrop-blur-sm transition-all duration-500 group-hover:border-accent/30 group-hover:shadow-xl group-hover:shadow-accent/5">
                 {/* Number indicator */}
-                <span className="absolute top-6 right-8 text-6xl font-bold text-foreground/[0.03] group-hover:text-accent/10 transition-colors duration-500 font-display">
+                <span className="absolute top-4 right-6 text-6xl font-bold text-accent/15 group-hover:text-accent/25 transition-colors duration-500 font-display select-none pointer-events-none">
                   0{index + 1}
                 </span>
                 
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/15 to-accent/5 flex items-center justify-center mb-7 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/15 to-accent/5 flex items-center justify-center mb-7 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <role.icon className="w-8 h-8 text-accent" />
                 </div>
                 
