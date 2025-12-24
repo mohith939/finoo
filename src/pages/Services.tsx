@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Calculator, BookOpen, Rocket, Globe, FileText, Users, Shield, Wallet } from "lucide-react";
+import { MessageCircle, Calculator, BookOpen, Rocket, Globe, FileText, Users, Shield, Wallet, ArrowRight } from "lucide-react";
 
 const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.";
 
@@ -17,6 +17,7 @@ const services = [
       "Professional tax registration",
       "MSME / Udyam registration",
     ],
+    highlight: true,
   },
   {
     category: "Bookkeeping & Reports",
@@ -29,6 +30,7 @@ const services = [
       "Cash flow tracking",
       "Bank reconciliation",
     ],
+    highlight: false,
   },
   {
     category: "Startup Setup",
@@ -41,6 +43,7 @@ const services = [
       "ESOP setup basics",
       "Business bank account assistance",
     ],
+    highlight: false,
   },
   {
     category: "Documents & Agreements",
@@ -53,6 +56,7 @@ const services = [
       "Client service agreements",
       "Board resolutions",
     ],
+    highlight: false,
   },
   {
     category: "Payroll & Team",
@@ -65,6 +69,7 @@ const services = [
       "Payslip generation",
       "Leave & attendance basics",
     ],
+    highlight: true,
   },
   {
     category: "Compliance Calendar",
@@ -77,6 +82,7 @@ const services = [
       "Statutory audit coordination",
       "Deadline tracking",
     ],
+    highlight: false,
   },
   {
     category: "Basic Tech Help",
@@ -89,6 +95,7 @@ const services = [
       "Online invoicing tools",
       "Basic automation help",
     ],
+    highlight: false,
   },
   {
     category: "Advisory Basics",
@@ -101,6 +108,7 @@ const services = [
       "Founder finance basics",
       "Ad-hoc queries support",
     ],
+    highlight: true,
   },
 ];
 
@@ -108,26 +116,35 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-background">
-        <div className="container-calm section-padding">
+      <section className="bg-background relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute -right-32 -top-32 w-[500px] h-[500px] rounded-full bg-accent/5 blur-3xl" />
+        
+        <div className="container-calm section-padding relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="max-w-3xl"
+            className="max-w-4xl"
           >
-            <h1 className="heading-hero text-foreground mb-6">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="w-12 h-[2px] bg-accent" />
+              <span className="text-accent font-medium tracking-wide uppercase text-sm">
+                Our Services
+              </span>
+            </div>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground mb-6 leading-tight">
               Simple services.
               <br />
               <span className="text-muted-foreground">No complex packages.</span>
             </h1>
-            <p className="body-large max-w-xl mb-8">
-              We don't believe in overwhelming you with options. 
-              Here's what we can help with — straightforward and honest.
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-10">
+              We do not believe in overwhelming you with options. 
+              Here is what we can help with — straightforward and honest.
             </p>
-            <Button variant="whatsapp" size="lg" asChild>
+            <Button variant="whatsapp" size="lg" className="group" asChild>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2" />
+                <MessageCircle className="mr-2 group-hover:scale-110 transition-transform" />
                 Talk to us about your needs
               </a>
             </Button>
@@ -136,38 +153,49 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="bg-card">
+      <section className="bg-card relative">
         <div className="container-calm section-padding">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-background rounded-2xl p-8 border border-border"
+                className={`group relative rounded-3xl p-8 md:p-10 border transition-all duration-500 hover:shadow-lg ${
+                  service.highlight 
+                    ? "bg-accent/5 border-accent/20" 
+                    : "bg-background border-border"
+                }`}
               >
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center shrink-0">
-                    <service.icon className="w-6 h-6 text-accent" />
+                {/* Number indicator */}
+                <span className="absolute top-6 right-6 text-5xl font-bold text-foreground/5">
+                  0{index + 1}
+                </span>
+                
+                <div className="flex items-start gap-4 mb-8">
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 transition-transform group-hover:scale-110 ${
+                    service.highlight ? "bg-accent/20" : "bg-sage-light"
+                  }`}>
+                    <service.icon className="w-7 h-7 text-accent" />
                   </div>
                   <div>
-                    <h3 className="heading-card text-foreground">
+                    <h3 className="text-2xl font-semibold text-foreground group-hover:text-accent transition-colors">
                       {service.category}
                     </h3>
-                    <p className="text-muted-foreground text-sm mt-1">
+                    <p className="text-muted-foreground mt-1">
                       {service.description}
                     </p>
                   </div>
                 </div>
-                <ul className="space-y-3">
+                <ul className="space-y-3 pl-2">
                   {service.items.map((item, itemIndex) => (
                     <li
                       key={itemIndex}
-                      className="text-muted-foreground text-sm flex items-center gap-2"
+                      className="text-muted-foreground flex items-center gap-3"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                      <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -179,25 +207,25 @@ const Services = () => {
       </section>
 
       {/* Bottom CTA */}
-      <section className="bg-background">
-        <div className="container-calm section-padding text-center">
+      <section className="bg-foreground text-background">
+        <div className="container-calm section-padding">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="max-w-xl mx-auto"
+            className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="heading-section text-foreground mb-4">
+            <h2 className="text-4xl md:text-5xl font-semibold text-background mb-6">
               Not sure what you need?
             </h2>
-            <p className="body-large mb-8">
-              That's completely okay. Let's have a quick chat and figure it out together.
+            <p className="text-xl md:text-2xl text-background/70 mb-10">
+              That is completely okay. Let us have a quick chat and figure it out together.
             </p>
-            <Button variant="calm" size="lg" asChild>
+            <Button variant="whatsapp" size="lg" className="group" asChild>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2" />
-                Let's talk
+                <MessageCircle className="mr-2 group-hover:scale-110 transition-transform" />
+                Let us talk
               </a>
             </Button>
           </motion.div>
