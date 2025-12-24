@@ -14,6 +14,7 @@
 
 @layer base {
   :root {
+    /* Light Mode - Warm whites and soft tones */
     /* Anchor - Deep Navy/Charcoal */
     --background: 45 30% 98%;
     --foreground: 220 25% 18%;
@@ -69,6 +70,62 @@
     --sidebar-accent-foreground: 220 25% 18%;
     --sidebar-border: 45 15% 88%;
     --sidebar-ring: 158 35% 42%;
+  }
+
+  .dark {
+    /* Dark Mode - Deep navy backgrounds */
+    --background: 220 25% 10%;
+    --foreground: 45 20% 95%;
+
+    /* Cards - Slightly lighter than background */
+    --card: 220 25% 14%;
+    --card-foreground: 45 20% 95%;
+
+    --popover: 220 25% 14%;
+    --popover-foreground: 45 20% 95%;
+
+    /* Primary - Light for contrast */
+    --primary: 45 20% 95%;
+    --primary-foreground: 220 25% 10%;
+
+    /* Secondary */
+    --secondary: 220 20% 20%;
+    --secondary-foreground: 45 20% 95%;
+
+    /* Muted */
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 15% 60%;
+
+    /* Accent - Brighter sage for dark mode */
+    --accent: 158 40% 50%;
+    --accent-foreground: 220 25% 10%;
+
+    /* Destructive */
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 45 20% 95%;
+
+    /* Borders */
+    --border: 220 20% 22%;
+    --input: 220 20% 22%;
+    --ring: 158 40% 50%;
+
+    /* Custom tokens for dark mode */
+    --sage: 158 40% 50%;
+    --sage-light: 158 30% 20%;
+    --navy: 220 25% 10%;
+    --navy-light: 220 20% 25%;
+    --warm-white: 45 20% 95%;
+    --cream: 220 25% 14%;
+    
+    /* Sidebar dark */
+    --sidebar-background: 220 25% 12%;
+    --sidebar-foreground: 45 20% 95%;
+    --sidebar-primary: 158 40% 50%;
+    --sidebar-primary-foreground: 220 25% 10%;
+    --sidebar-accent: 220 20% 20%;
+    --sidebar-accent-foreground: 45 20% 95%;
+    --sidebar-border: 220 20% 22%;
+    --sidebar-ring: 158 40% 50%;
   }
 
   * {
