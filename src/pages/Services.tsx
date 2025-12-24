@@ -157,12 +157,14 @@ const Services = () => {
               We don't believe in overwhelming you with options. 
               Here's what we can help with — straightforward and honest.
             </p>
-            <Button variant="whatsapp" size="lg" className="group h-14 px-8 shadow-lg shadow-[hsl(142,70%,45%)]/20" asChild>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                <WhatsAppIcon className="mr-2.5 h-5 w-5 group-hover:scale-110 transition-transform" />
-                Talk to us about your needs
-              </a>
-            </Button>
+            <div className="flex justify-center w-full">
+              <Button variant="whatsapp" size="default" className="group px-6 shadow-lg shadow-[hsl(142,70%,45%)]/20" asChild>
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                  <WhatsAppIcon className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                  Talk to us about your needs
+                </a>
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
