@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MessageCircle, Mail, MapPin, Phone } from "lucide-react";
+import { MessageCircle, Mail, MapPin, Phone, Sparkles, ArrowRight, Clock, Shield } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -40,30 +40,54 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const contactMethods = [
+    {
+      icon: Phone,
+      title: "Phone",
+      value: PHONE_NUMBER,
+      href: `tel:${PHONE_NUMBER.replace(/\s/g, '')}`,
+    },
+    {
+      icon: Mail,
+      title: "Email",
+      value: EMAIL,
+      href: `mailto:${EMAIL}`,
+    },
+    {
+      icon: MapPin,
+      title: "Location",
+      value: "Based in India",
+      href: null,
+    },
+  ];
+
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-background relative overflow-hidden">
+      <section className="bg-background relative overflow-hidden min-h-[50vh] flex items-center">
         {/* Decorative elements */}
-        <div className="absolute top-20 right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-48 h-48 bg-accent/5 rounded-full blur-2xl" />
+        <div className="absolute -right-48 top-0 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-accent/10 to-accent/5 blur-3xl" />
+        <div className="absolute left-0 bottom-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_40%,transparent_100%)]" />
         
-        <div className="container-calm section-padding relative">
+        <div className="container-calm section-padding relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <motion.span
+            <motion.span 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-block text-sm font-medium text-accent mb-4 tracking-wide uppercase"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-8"
             >
-              Contact
+              <Sparkles className="w-3.5 h-3.5 text-accent" />
+              <span className="text-accent font-medium text-xs uppercase tracking-wider">Contact Us</span>
             </motion.span>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium text-foreground mb-6 leading-[1.1]">
+            
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 leading-[1.1]">
               Let's start
               <br />
               <span className="text-muted-foreground italic">a conversation.</span>
@@ -76,89 +100,73 @@ const Contact = () => {
       </section>
 
       {/* Contact Options */}
-      <section className="bg-card">
-        <div className="container-calm section-padding">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+      <section className="bg-card relative overflow-hidden">
+        <div className="absolute top-1/2 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+        
+        <div className="container-calm section-padding relative z-10">
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Left - Quick Contact */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
+              className="lg:col-span-2"
             >
-              <h2 className="font-display text-2xl sm:text-3xl font-medium text-foreground mb-6 leading-tight">
-                Quick way to <span className="italic text-accent">reach us</span>
+              <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-6 leading-tight">
+                Quick way to <span className="text-accent">reach us</span>
               </h2>
               <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
                 WhatsApp is the fastest way to get in touch. We typically respond 
                 within a few hours.
               </p>
 
-              <Button variant="whatsapp" size="lg" asChild className="mb-10">
+              <Button variant="whatsapp" size="lg" className="group h-14 px-8 mb-10 shadow-lg shadow-[hsl(142,70%,45%)]/20" asChild>
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-5 w-5" />
+                  <MessageCircle className="mr-2.5 h-5 w-5 group-hover:scale-110 transition-transform" />
                   Message on WhatsApp
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
 
-              <div className="space-y-6">
-                <motion.div 
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.1 }}
-                  className="flex items-start gap-4"
-                >
-                  <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground text-base">Phone</p>
-                    <a
-                      href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`}
-                      className="text-muted-foreground hover:text-accent transition-colors text-base"
-                    >
-                      {PHONE_NUMBER}
-                    </a>
-                  </div>
-                </motion.div>
-
-                <motion.div 
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.2 }}
-                  className="flex items-start gap-4"
-                >
-                  <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground text-base">Email</p>
-                    <a
-                      href={`mailto:${EMAIL}`}
-                      className="text-muted-foreground hover:text-accent transition-colors text-base"
-                    >
-                      {EMAIL}
-                    </a>
-                  </div>
-                </motion.div>
-
-                <motion.div 
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.3 }}
-                  className="flex items-start gap-4"
-                >
-                  <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground text-base">Based in</p>
-                    <p className="text-muted-foreground text-base">India</p>
-                  </div>
-                </motion.div>
+              {/* Contact methods */}
+              <div className="space-y-5">
+                {contactMethods.map((method, index) => (
+                  <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, x: -15 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.1 + index * 0.1 }}
+                  >
+                    {method.href ? (
+                      <a
+                        href={method.href}
+                        className="flex items-center gap-4 p-4 rounded-2xl bg-background border border-border/60 hover:border-accent/30 hover:shadow-lg transition-all group"
+                      >
+                        <span className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                          <method.icon className="w-5 h-5 text-accent" />
+                        </span>
+                        <div>
+                          <p className="font-medium text-foreground text-sm">{method.title}</p>
+                          <p className="text-muted-foreground group-hover:text-accent transition-colors">
+                            {method.value}
+                          </p>
+                        </div>
+                      </a>
+                    ) : (
+                      <div className="flex items-center gap-4 p-4 rounded-2xl bg-background border border-border/60">
+                        <span className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                          <method.icon className="w-5 h-5 text-accent" />
+                        </span>
+                        <div>
+                          <p className="font-medium text-foreground text-sm">{method.title}</p>
+                          <p className="text-muted-foreground">{method.value}</p>
+                        </div>
+                      </div>
+                    )}
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
 
@@ -168,13 +176,17 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
+              className="lg:col-span-3"
             >
-              <div className="bg-background rounded-2xl p-8 border border-border shadow-sm">
-                <h3 className="font-display text-xl sm:text-2xl font-medium text-foreground mb-6">
-                  Or fill this <span className="italic text-accent">simple form</span>
-                </h3>
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid sm:grid-cols-2 gap-4">
+              <div className="bg-background rounded-3xl p-8 md:p-10 border border-border/60 shadow-xl shadow-black/5">
+                <div className="flex items-center gap-3 mb-8">
+                  <h3 className="font-display text-xl sm:text-2xl text-foreground">
+                    Or fill this <span className="text-accent">simple form</span>
+                  </h3>
+                </div>
+                
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-5">
                     <div className="space-y-2">
                       <Label htmlFor="name" className="text-sm font-medium">Your name *</Label>
                       <Input
@@ -184,7 +196,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         placeholder="John"
-                        className="h-11"
+                        className="h-12 rounded-xl border-border/60 focus:border-accent"
                       />
                     </div>
                     <div className="space-y-2">
@@ -197,12 +209,12 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         placeholder="+91 98765 43210"
-                        className="h-11"
+                        className="h-12 rounded-xl border-border/60 focus:border-accent"
                       />
                     </div>
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="grid sm:grid-cols-2 gap-5">
                     <div className="space-y-2">
                       <Label htmlFor="email" className="text-sm font-medium">Email</Label>
                       <Input
@@ -212,7 +224,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="john@company.com"
-                        className="h-11"
+                        className="h-12 rounded-xl border-border/60 focus:border-accent"
                       />
                     </div>
                     <div className="space-y-2">
@@ -223,7 +235,7 @@ const Contact = () => {
                         value={formData.company}
                         onChange={handleChange}
                         placeholder="Your startup"
-                        className="h-11"
+                        className="h-12 rounded-xl border-border/60 focus:border-accent"
                       />
                     </div>
                   </div>
@@ -237,23 +249,32 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="Tell us a bit about your situation..."
                       rows={4}
-                      className="resize-none"
+                      className="resize-none rounded-xl border-border/60 focus:border-accent"
                     />
                   </div>
 
                   <Button
                     type="submit"
                     variant="calm"
-                    size="lg"
-                    className="w-full h-12 text-base font-medium"
+                    size="xl"
+                    className="w-full"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Sending..." : "Send message"}
+                    {!isSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
                   </Button>
 
-                  <p className="text-sm text-muted-foreground text-center">
-                    We respect your privacy. No spam, ever.
-                  </p>
+                  {/* Trust signals */}
+                  <div className="flex flex-wrap items-center justify-center gap-6 pt-4 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-accent" />
+                      <span>Quick response</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Shield className="w-4 h-4 text-accent" />
+                      <span>No spam, ever</span>
+                    </div>
+                  </div>
                 </form>
               </div>
             </motion.div>
