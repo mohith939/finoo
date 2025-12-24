@@ -43,20 +43,32 @@ const Contact = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-background">
-        <div className="container-calm section-padding">
+      <section className="bg-background relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-20 right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-48 h-48 bg-accent/5 rounded-full blur-2xl" />
+        
+        <div className="container-calm section-padding relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <h1 className="heading-hero text-foreground mb-6">
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="inline-block text-sm font-medium text-accent mb-4 tracking-wide uppercase"
+            >
+              Contact
+            </motion.span>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium text-foreground mb-6 leading-[1.1]">
               Let's start
               <br />
-              <span className="text-muted-foreground">a conversation.</span>
+              <span className="text-muted-foreground italic">a conversation.</span>
             </h1>
-            <p className="body-large max-w-xl">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-xl leading-relaxed">
               No commitment. No pressure. Just a chat to see if we can help.
             </p>
           </motion.div>
@@ -74,61 +86,79 @@ const Contact = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="heading-section text-foreground mb-6">
-                Quick way to reach us
+              <h2 className="font-display text-2xl sm:text-3xl font-medium text-foreground mb-6 leading-tight">
+                Quick way to <span className="italic text-accent">reach us</span>
               </h2>
-              <p className="body-regular mb-8">
+              <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
                 WhatsApp is the fastest way to get in touch. We typically respond 
                 within a few hours.
               </p>
 
               <Button variant="whatsapp" size="lg" asChild className="mb-10">
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2" />
+                  <MessageCircle className="mr-2 h-5 w-5" />
                   Message on WhatsApp
                 </a>
               </Button>
 
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-sage-light flex items-center justify-center shrink-0">
+                <motion.div 
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                  className="flex items-start gap-4"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5 text-accent" />
                   </div>
                   <div>
-                    <p className="font-medium text-foreground">Phone</p>
+                    <p className="font-medium text-foreground text-base">Phone</p>
                     <a
                       href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`}
-                      className="text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-muted-foreground hover:text-accent transition-colors text-base"
                     >
                       {PHONE_NUMBER}
                     </a>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-sage-light flex items-center justify-center shrink-0">
+                <motion.div 
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  className="flex items-start gap-4"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5 text-accent" />
                   </div>
                   <div>
-                    <p className="font-medium text-foreground">Email</p>
+                    <p className="font-medium text-foreground text-base">Email</p>
                     <a
                       href={`mailto:${EMAIL}`}
-                      className="text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-muted-foreground hover:text-accent transition-colors text-base"
                     >
                       {EMAIL}
                     </a>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-sage-light flex items-center justify-center shrink-0">
+                <motion.div 
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                  className="flex items-start gap-4"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5 text-accent" />
                   </div>
                   <div>
-                    <p className="font-medium text-foreground">Based in</p>
-                    <p className="text-muted-foreground">India</p>
+                    <p className="font-medium text-foreground text-base">Based in</p>
+                    <p className="text-muted-foreground text-base">India</p>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
 
@@ -139,14 +169,14 @@ const Contact = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <div className="bg-background rounded-2xl p-8 border border-border">
-                <h3 className="heading-card text-foreground mb-6">
-                  Or fill this simple form
+              <div className="bg-background rounded-2xl p-8 border border-border shadow-sm">
+                <h3 className="font-display text-xl sm:text-2xl font-medium text-foreground mb-6">
+                  Or fill this <span className="italic text-accent">simple form</span>
                 </h3>
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Your name *</Label>
+                      <Label htmlFor="name" className="text-sm font-medium">Your name *</Label>
                       <Input
                         id="name"
                         name="name"
@@ -154,10 +184,11 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         placeholder="John"
+                        className="h-11"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Phone (WhatsApp) *</Label>
+                      <Label htmlFor="phone" className="text-sm font-medium">Phone (WhatsApp) *</Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -166,13 +197,14 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         placeholder="+91 98765 43210"
+                        className="h-11"
                       />
                     </div>
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
+                      <Label htmlFor="email" className="text-sm font-medium">Email</Label>
                       <Input
                         id="email"
                         name="email"
@@ -180,22 +212,24 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="john@company.com"
+                        className="h-11"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="company">Company name</Label>
+                      <Label htmlFor="company" className="text-sm font-medium">Company name</Label>
                       <Input
                         id="company"
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
                         placeholder="Your startup"
+                        className="h-11"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">What can we help with?</Label>
+                    <Label htmlFor="message" className="text-sm font-medium">What can we help with?</Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -203,6 +237,7 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="Tell us a bit about your situation..."
                       rows={4}
+                      className="resize-none"
                     />
                   </div>
 
@@ -210,13 +245,13 @@ const Contact = () => {
                     type="submit"
                     variant="calm"
                     size="lg"
-                    className="w-full"
+                    className="w-full h-12 text-base font-medium"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Sending..." : "Send message"}
                   </Button>
 
-                  <p className="text-xs text-muted-foreground text-center">
+                  <p className="text-sm text-muted-foreground text-center">
                     We respect your privacy. No spam, ever.
                   </p>
                 </form>
