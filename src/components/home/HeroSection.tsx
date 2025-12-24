@@ -6,7 +6,7 @@ const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-8">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-0">
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-background">
         {/* Large gradient orb */}
@@ -51,7 +51,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.15)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.15)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_40%,#000_40%,transparent_100%)]" />
       </div>
       
-      <div className="container-calm px-6 py-10 md:px-12 lg:px-20 relative z-10">
+      <div className="container-calm px-6 py-4 md:px-12 lg:px-20 relative z-10">
         <div className="max-w-4xl">
           {/* Eyebrow with badge style */}
           <motion.div
