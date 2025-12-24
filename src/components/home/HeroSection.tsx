@@ -6,7 +6,7 @@ const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-20">
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-background">
         {/* Large gradient orb */}
@@ -51,14 +51,14 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.15)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.15)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_40%,#000_40%,transparent_100%)]" />
       </div>
       
-      <div className="container-calm section-padding relative z-10 pt-32">
+      <div className="container-calm px-6 py-10 md:px-12 lg:px-20 relative z-10">
         <div className="max-w-4xl">
           {/* Eyebrow with badge style */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center gap-3 mb-10"
+            className="flex items-center gap-3 mb-6"
           >
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20">
               <Sparkles className="w-3.5 h-3.5 text-accent" />
@@ -72,7 +72,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="font-display text-5xl sm:text-6xl lg:text-7xl text-foreground mb-8 leading-[1.05] tracking-tight"
+            className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 leading-[1.05] tracking-tight"
           >
             You focus on
             <br />
@@ -95,11 +95,11 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
-            className="relative max-w-2xl mb-12"
+            className="relative max-w-2xl mb-8"
           >
-            <div className="relative p-6 md:p-8 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-border/50 backdrop-blur-sm">
+            <div className="relative p-5 md:p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-border/50 backdrop-blur-sm">
               {/* Accent line */}
-              <div className="absolute left-0 top-6 bottom-6 w-1 bg-gradient-to-b from-accent via-accent/60 to-transparent rounded-full" />
+              <div className="absolute left-0 top-5 bottom-5 w-1 bg-gradient-to-b from-accent via-accent/60 to-transparent rounded-full" />
               
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed pl-5">
                 Finance and compliance can feel overwhelming
@@ -146,7 +146,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-20 pt-10 border-t border-border/40"
+            className="mt-10 pt-6 border-t border-border/40"
           >
             <div className="flex flex-wrap items-center gap-8 md:gap-12">
               <div className="flex items-center gap-3">
