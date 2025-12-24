@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { MessageCircle, ArrowUpRight, Mail, Phone, MapPin } from "lucide-react";
+import { MessageCircle, ArrowUpRight, Mail, Phone, MapPin, Sparkles } from "lucide-react";
 import finsticsLogo from "@/assets/finstics-logo.png";
 
 const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.";
@@ -19,26 +19,35 @@ const Footer = () => {
   return (
     <footer className="relative overflow-hidden">
       {/* Dark gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-card via-[hsl(220,25%,8%)] to-[hsl(220,25%,6%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-card via-[hsl(220,25%,8%)] to-[hsl(220,25%,5%)]" />
+      
+      {/* Decorative grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.08)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.08)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
       
       {/* Decorative elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent/3 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent/3 rounded-full blur-3xl" />
       
       <div className="container-calm relative z-10">
+        {/* Top accent bar */}
+        <div className="h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
+        
         {/* Main footer content */}
-        <div className="py-16 md:py-24 border-b border-border/30">
+        <div className="py-16 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
             {/* Brand section */}
             <div className="lg:col-span-5">
-              <Link to="/" className="inline-block mb-6">
-                <div className="bg-white/95 rounded-xl p-2 inline-block shadow-lg">
+              <Link to="/" className="inline-block mb-6 group">
+                <motion.div 
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-white/95 rounded-xl p-2.5 inline-block shadow-lg shadow-black/20 group-hover:shadow-xl group-hover:shadow-accent/10 transition-shadow"
+                >
                   <img 
                     src={finsticsLogo} 
                     alt="FINSTICS" 
                     className="h-10 w-auto"
                   />
-                </div>
+                </motion.div>
               </Link>
               <p className="text-muted-foreground text-lg leading-relaxed max-w-md mb-8">
                 The calm back office for first-time founders. We quietly take care of 
@@ -50,65 +59,90 @@ const Footer = () => {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.02 }}
-                className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-[hsl(142,70%,45%)]/10 border border-[hsl(142,70%,45%)]/20 text-[hsl(142,70%,45%)] font-semibold hover:bg-[hsl(142,70%,45%)]/20 transition-colors"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[hsl(142,70%,45%)]/15 to-[hsl(142,70%,45%)]/5 border border-[hsl(142,70%,45%)]/25 text-[hsl(142,70%,45%)] font-semibold hover:border-[hsl(142,70%,45%)]/40 transition-all shadow-lg shadow-[hsl(142,70%,45%)]/5"
               >
                 <MessageCircle className="w-5 h-5" />
                 Message us on WhatsApp
-                <ArrowUpRight className="w-4 h-4" />
+                <ArrowUpRight className="w-4 h-4 ml-1" />
               </motion.a>
             </div>
 
             {/* Navigation */}
             <div className="lg:col-span-3">
-              <h4 className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wider">Navigation</h4>
-              <ul className="space-y-4">
-                {navLinks.map((link) => (
-                  <li key={link.href}>
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                <h4 className="font-semibold text-foreground text-sm uppercase tracking-wider">Navigation</h4>
+              </div>
+              <ul className="space-y-3.5">
+                {navLinks.map((link, index) => (
+                  <motion.li 
+                    key={link.href}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                  >
                     <Link 
                       to={link.href} 
-                      className="text-muted-foreground hover:text-accent transition-colors inline-flex items-center gap-2 group"
+                      className="text-muted-foreground hover:text-accent transition-colors inline-flex items-center gap-2 group py-1"
                     >
+                      <span className="w-0 h-px bg-accent group-hover:w-4 transition-all duration-300" />
                       {link.label}
                       <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
                     </Link>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </div>
 
             {/* Contact info */}
             <div className="lg:col-span-4">
-              <h4 className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wider">Get in Touch</h4>
-              <ul className="space-y-5">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                <h4 className="font-semibold text-foreground text-sm uppercase tracking-wider">Get in Touch</h4>
+              </div>
+              <ul className="space-y-4">
                 <li>
-                  <a 
+                  <motion.a 
                     href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`}
-                    className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group"
+                    whileHover={{ x: 4 }}
+                    className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group p-3 -ml-3 rounded-xl hover:bg-accent/5"
                   >
-                    <span className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                    <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-accent/15 to-accent/5 border border-accent/10 flex items-center justify-center group-hover:border-accent/20 transition-colors">
                       <Phone className="w-4 h-4 text-accent" />
                     </span>
-                    <span>{PHONE_NUMBER}</span>
-                  </a>
+                    <div>
+                      <span className="text-xs text-muted-foreground/70 block">Phone</span>
+                      <span className="font-medium">{PHONE_NUMBER}</span>
+                    </div>
+                  </motion.a>
                 </li>
                 <li>
-                  <a 
+                  <motion.a 
                     href={`mailto:${EMAIL}`}
-                    className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group"
+                    whileHover={{ x: 4 }}
+                    className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group p-3 -ml-3 rounded-xl hover:bg-accent/5"
                   >
-                    <span className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                    <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-accent/15 to-accent/5 border border-accent/10 flex items-center justify-center group-hover:border-accent/20 transition-colors">
                       <Mail className="w-4 h-4 text-accent" />
                     </span>
-                    <span>{EMAIL}</span>
-                  </a>
+                    <div>
+                      <span className="text-xs text-muted-foreground/70 block">Email</span>
+                      <span className="font-medium">{EMAIL}</span>
+                    </div>
+                  </motion.a>
                 </li>
                 <li>
-                  <div className="flex items-center gap-4 text-muted-foreground">
-                    <span className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <div className="flex items-center gap-4 text-muted-foreground p-3 -ml-3">
+                    <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-accent/15 to-accent/5 border border-accent/10 flex items-center justify-center">
                       <MapPin className="w-4 h-4 text-accent" />
                     </span>
-                    <span>Based in India</span>
+                    <div>
+                      <span className="text-xs text-muted-foreground/70 block">Location</span>
+                      <span className="font-medium">Based in India</span>
+                    </div>
                   </div>
                 </li>
               </ul>
@@ -117,16 +151,24 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} FINSTICS. Helping founders focus on what matters.
-          </p>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-            </span>
-            <span>Available for new founders</span>
+        <div className="border-t border-border/20">
+          <div className="py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-muted-foreground/80">
+              © {new Date().getFullYear()} FINSTICS. Helping founders focus on what matters.
+            </p>
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2 text-sm">
+                <span className="flex h-2 w-2 relative">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                </span>
+                <span className="text-muted-foreground/80">Available for new founders</span>
+              </div>
+              <div className="hidden md:flex items-center gap-1.5 text-sm text-muted-foreground/60">
+                <Sparkles className="w-3.5 h-3.5 text-accent/60" />
+                <span>Built with care</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
