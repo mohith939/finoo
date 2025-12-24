@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Sparkles, ArrowRight, HelpCircle } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -68,27 +68,30 @@ const FAQ = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-background relative overflow-hidden">
+      <section className="bg-background relative overflow-hidden min-h-[50vh] flex items-center">
         {/* Decorative elements */}
-        <div className="absolute top-20 right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-48 h-48 bg-accent/5 rounded-full blur-2xl" />
+        <div className="absolute -right-48 top-0 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-accent/10 to-accent/5 blur-3xl" />
+        <div className="absolute left-0 bottom-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_40%,transparent_100%)]" />
         
-        <div className="container-calm section-padding relative">
+        <div className="container-calm section-padding relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <motion.span
+            <motion.span 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-block text-sm font-medium text-accent mb-4 tracking-wide uppercase"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-8"
             >
-              FAQ
+              <HelpCircle className="w-3.5 h-3.5 text-accent" />
+              <span className="text-accent font-medium text-xs uppercase tracking-wider">FAQ</span>
             </motion.span>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium text-foreground mb-6 leading-[1.1]">
+            
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 leading-[1.1]">
               Questions founders
               <br />
               <span className="text-muted-foreground italic">actually ask us.</span>
@@ -101,8 +104,10 @@ const FAQ = () => {
       </section>
 
       {/* FAQ Accordion */}
-      <section className="bg-card">
-        <div className="container-calm section-padding">
+      <section className="bg-card relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/3 rounded-full blur-3xl" />
+        
+        <div className="container-calm section-padding relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -114,19 +119,24 @@ const FAQ = () => {
               {faqs.map((faq, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                 >
                   <AccordionItem
                     value={`item-${index}`}
-                    className="bg-background rounded-xl border border-border px-6 transition-shadow hover:shadow-md"
+                    className="bg-background rounded-2xl border border-border/60 px-6 md:px-8 transition-all duration-300 hover:shadow-lg hover:border-accent/30 data-[state=open]:border-accent/40 data-[state=open]:shadow-xl"
                   >
-                    <AccordionTrigger className="text-left text-base sm:text-lg font-medium text-foreground hover:no-underline py-5 font-sans">
-                      {faq.question}
+                    <AccordionTrigger className="text-left text-base sm:text-lg font-medium text-foreground hover:no-underline py-6 font-sans hover:text-accent transition-colors">
+                      <span className="flex items-start gap-4">
+                        <span className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 text-sm font-semibold text-accent">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                        <span>{faq.question}</span>
+                      </span>
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground pb-5 leading-relaxed text-base">
+                    <AccordionContent className="text-muted-foreground pb-6 pl-12 leading-relaxed text-base">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
@@ -139,27 +149,42 @@ const FAQ = () => {
 
       {/* CTA */}
       <section className="bg-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-transparent" />
-        <div className="container-calm section-padding text-center relative">
+        <div className="absolute inset-0 bg-gradient-to-t from-card/50 to-transparent" />
+        
+        <div className="container-calm section-padding relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="max-w-xl mx-auto"
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl mx-auto"
           >
-            <h2 className="font-display text-3xl sm:text-4xl font-medium text-foreground mb-4 leading-tight">
-              Still have <span className="italic text-accent">questions?</span>
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              We're always happy to chat. No question is too small.
-            </p>
-            <Button variant="whatsapp" size="lg" asChild>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Ask us anything
-              </a>
-            </Button>
+            <div className="bg-gradient-to-br from-card/90 to-card/50 backdrop-blur-xl rounded-3xl border border-border/50 p-10 md:p-14 text-center shadow-2xl">
+              <motion.span 
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-accent" />
+                <span className="text-accent font-medium text-xs uppercase tracking-wider">Still Curious?</span>
+              </motion.span>
+              
+              <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-4 leading-tight">
+                Still have <span className="text-accent">questions?</span>
+              </h2>
+              <p className="text-lg text-muted-foreground mb-10">
+                We're always happy to chat. No question is too small.
+              </p>
+              
+              <Button variant="whatsapp" size="xl" className="group shadow-lg shadow-[hsl(142,70%,45%)]/20" asChild>
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2.5 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  Ask us anything
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
