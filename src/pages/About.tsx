@@ -3,219 +3,132 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Heart, Target, Lightbulb, Quote, Sparkles, ArrowRight, Users, MapPin } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
-
 const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.";
-
 const About = () => {
-  const values = [
-    {
-      icon: Heart,
-      title: "Calm over chaos",
-      description: "We believe finance should not feel scary. Our job is to bring relief, not more stress.",
-      gradient: "from-rose-500/20 to-pink-500/10",
-    },
-    {
-      icon: Target,
-      title: "Clarity over complexity",
-      description: "Simple language. Clear expectations. No jargon, no surprises.",
-      gradient: "from-blue-500/20 to-cyan-500/10",
-    },
-    {
-      icon: Lightbulb,
-      title: "Partnership over transactions",
-      description: "We're not vendors. We're your extended team, invested in your growth.",
-      gradient: "from-amber-500/20 to-orange-500/10",
-    },
-  ];
-
-  const stats = [
-    { value: "100+", label: "Founders helped" },
-    { value: "24h", label: "Avg response time" },
-    { value: "Zero", label: "Hidden fees" },
-  ];
-
-  return (
-    <Layout>
+  const values = [{
+    icon: Heart,
+    title: "Calm over chaos",
+    description: "We believe finance should not feel scary. Our job is to bring relief, not more stress.",
+    gradient: "from-rose-500/20 to-pink-500/10"
+  }, {
+    icon: Target,
+    title: "Clarity over complexity",
+    description: "Simple language. Clear expectations. No jargon, no surprises.",
+    gradient: "from-blue-500/20 to-cyan-500/10"
+  }, {
+    icon: Lightbulb,
+    title: "Partnership over transactions",
+    description: "We're not vendors. We're your extended team, invested in your growth.",
+    gradient: "from-amber-500/20 to-orange-500/10"
+  }];
+  const stats = [{
+    value: "100+",
+    label: "Founders helped"
+  }, {
+    value: "24h",
+    label: "Avg response time"
+  }, {
+    value: "Zero",
+    label: "Hidden fees"
+  }];
+  return <Layout>
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-0">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 bg-background">
-          {/* Large gradient orb */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            className="absolute -right-48 top-1/4 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-accent/15 via-accent/8 to-transparent blur-3xl"
-          />
-          {/* Secondary orb */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.7 }}
-            transition={{ duration: 2, delay: 0.5 }}
-            className="absolute -left-24 bottom-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-accent/10 via-primary/5 to-transparent blur-3xl"
-          />
-          {/* Floating particles effect */}
-          <div className="absolute inset-0 overflow-hidden">
-            {[...Array(3)].map((_, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ 
-                  opacity: [0, 0.3, 0],
-                  y: [-100, -400]
-                }}
-                transition={{ 
-                  duration: 8,
-                  delay: i * 3,
-                  repeat: Infinity,
-                  ease: "easeOut"
-                }}
-                className="absolute w-1 h-1 bg-accent rounded-full"
-                style={{ 
-                  left: `${25 + i * 25}%`,
-                  bottom: '20%'
-                }}
-              />
-            ))}
-          </div>
-          {/* Refined grid pattern */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.15)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.15)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_40%,#000_40%,transparent_100%)]" />
-        </div>
+      <section className="bg-background relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute -right-48 -top-48 w-[700px] h-[700px] rounded-full bg-gradient-to-br from-accent/10 to-accent/5 blur-3xl" />
+        <div className="absolute left-0 bottom-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_40%,transparent_100%)]" />
         
         <div className="container-calm px-6 py-4 md:px-12 lg:px-20 relative z-10">
-          <div className="max-w-4xl mx-auto">
-            {/* Eyebrow with badge style */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="flex items-center gap-3 mb-6"
-            >
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20">
-                <Sparkles className="w-3.5 h-3.5 text-accent" />
-                <span className="text-accent font-medium text-xs uppercase tracking-wider">About Us</span>
-              </span>
-            </motion.div>
+          <motion.div initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.6
+        }} className="max-w-4xl">
+            <motion.span initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.5,
+            delay: 0.1
+          }} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6">
+              <Sparkles className="w-3.5 h-3.5 text-accent" />
+              <span className="text-accent font-medium text-xs uppercase tracking-wider">About Us</span>
+            </motion.span>
             
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 leading-[1.05] tracking-tight"
-            >
-              The{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10 text-accent">calm</span>
-                <motion.span 
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.6, delay: 1 }}
-                  className="absolute bottom-2 md:bottom-3 left-0 right-0 h-3 md:h-4 bg-accent/20 origin-left -z-0"
-                />
-              </span>
-              {" "}back office
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 leading-[1.1]">
+              The calm back office
               <br />
               <span className="text-muted-foreground">for first-time founders.</span>
-            </motion.h1>
-            
-            {/* Value proposition card */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.35 }}
-              className="relative max-w-2xl mb-8"
-            >
-              <div className="relative p-5 md:p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-border/50 backdrop-blur-sm">
-                {/* Accent line */}
-                <div className="absolute left-0 top-5 bottom-5 w-1 bg-gradient-to-b from-accent via-accent/60 to-transparent rounded-full" />
-                
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed pl-5">
-                  We started FINSTICS because we saw too many talented founders losing sleep over compliance and finance
-                  <span className="block mt-2 text-foreground font-semibold text-xl md:text-2xl">
-                    — things that should not stop them from building.
-                  </span>
-                </p>
-              </div>
-            </motion.div>
-            
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.5 }}
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-5"
-            >
-              <Button variant="whatsapp" size="lg" className="group h-14 px-8 text-base shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all" asChild>
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  <WhatsAppIcon className="mr-2.5 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  Start a conversation
-                </a>
-              </Button>
-              
-              <div className="flex items-center gap-3">
-                <span className="hidden sm:block w-8 h-px bg-border" />
-                <Button variant="ghost" size="lg" className="group h-12 px-5 text-base text-muted-foreground hover:text-accent hover:bg-transparent" asChild>
-                  <a href="#our-story" className="flex items-center gap-2">
-                    <span className="relative">
-                      Learn our story
-                      <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-300" />
-                    </span>
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                </Button>
-              </div>
-            </motion.div>
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
+              We started FINSTICS because we saw too many talented founders 
+              losing sleep over compliance and finance — things that should not 
+              stop them from building.
+            </p>
+          </motion.div>
 
-            {/* Trust indicators */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="mt-10 pt-6 border-t border-border/40"
-            >
-              <div className="flex flex-wrap items-center gap-8 md:gap-12">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-2.5 w-2.5 relative">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
-                  </span>
-                  <span className="text-sm text-muted-foreground">Trusted by founders across India</span>
-                </div>
-                <div className="hidden sm:block w-px h-5 bg-border" />
-                <div className="text-sm text-muted-foreground">
-                  <span className="text-foreground font-semibold">Quick response</span> within hours
-                </div>
-              </div>
-            </motion.div>
-          </div>
+          {/* Stats */}
+          <motion.div initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.6,
+          delay: 0.3
+        }} className="mt-16 grid grid-cols-3 gap-8 max-w-xl">
+            {stats.map((stat, index) => <div key={index} className="text-center">
+                <p className="font-display text-3xl md:text-4xl text-accent mb-1">{stat.value}</p>
+                <p className="text-sm text-muted-foreground my-0 mx-[100px]">{stat.label}</p>
+              </div>)}
+          </motion.div>
         </div>
       </section>
 
       {/* Story */}
       <section className="bg-card relative overflow-hidden">
-        <motion.div 
-          initial={{ opacity: 0, rotate: -10 }}
-          whileInView={{ opacity: 0.03 }}
-          viewport={{ once: true }}
-          className="absolute top-8 right-8 md:right-16"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        rotate: -10
+      }} whileInView={{
+        opacity: 0.03
+      }} viewport={{
+        once: true
+      }} className="absolute top-8 right-8 md:right-16">
           <Quote className="w-32 h-32 md:w-56 md:h-56 text-foreground" />
         </motion.div>
         
         <div className="container-calm section-padding">
           <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <motion.span 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6"
-              >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.5
+          }}>
+              <motion.span initial={{
+              opacity: 0,
+              x: -20
+            }} whileInView={{
+              opacity: 1,
+              x: 0
+            }} viewport={{
+              once: true
+            }} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6">
                 <Sparkles className="w-3.5 h-3.5 text-accent" />
                 <span className="text-accent font-medium text-xs uppercase tracking-wider">Our Story</span>
               </motion.span>
@@ -242,13 +155,17 @@ const About = () => {
               </div>
               
               {/* Quote highlight */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="mt-10 relative"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              x: -20
+            }} whileInView={{
+              opacity: 1,
+              x: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              delay: 0.3
+            }} className="mt-10 relative">
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-accent via-accent/50 to-transparent rounded-full" />
                 <p className="text-foreground font-display text-2xl md:text-3xl pl-8 italic leading-snug">
                   "You focus on growth. We carry the finance and compliance load."
@@ -264,19 +181,26 @@ const About = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/3 rounded-full blur-3xl" />
         
         <div className="container-calm section-padding relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-16 text-center"
-          >
-            <motion.span 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6"
-            >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.5
+        }} className="mb-16 text-center">
+            <motion.span initial={{
+            opacity: 0,
+            y: 10
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6">
               <Sparkles className="w-3.5 h-3.5 text-accent" />
               <span className="text-accent font-medium text-xs uppercase tracking-wider">Our Values</span>
             </motion.span>
@@ -287,15 +211,18 @@ const About = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
-            {values.map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative"
-              >
+            {values.map((value, index) => <motion.div key={index} initial={{
+            opacity: 0,
+            y: 40
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.5,
+            delay: index * 0.1
+          }} className="group relative">
                 {/* Hover glow */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                 
@@ -310,8 +237,7 @@ const About = () => {
                     {value.description}
                   </p>
                 </div>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
       </section>
@@ -327,18 +253,26 @@ const About = () => {
         
         <div className="container-calm section-padding relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <motion.span 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6"
-              >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.5
+          }}>
+              <motion.span initial={{
+              opacity: 0,
+              x: -20
+            }} whileInView={{
+              opacity: 1,
+              x: 0
+            }} viewport={{
+              once: true
+            }} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6">
                 <Sparkles className="w-3.5 h-3.5 text-accent" />
                 <span className="text-accent font-medium text-xs uppercase tracking-wider">Our Focus</span>
               </motion.span>
@@ -364,13 +298,18 @@ const About = () => {
             </motion.div>
 
             {/* Feature cards */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="space-y-6"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 30
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.5,
+            delay: 0.2
+          }} className="space-y-6">
               <div className="bg-card/30 backdrop-blur-sm rounded-2xl p-6 border border-border/30">
                 <div className="flex items-center gap-4 mb-3">
                   <span className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center">
@@ -400,20 +339,27 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-card/50 to-transparent" />
         
         <div className="container-calm section-padding relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 40
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.6
+        }} className="max-w-3xl mx-auto">
             <div className="bg-gradient-to-br from-card/90 to-card/50 backdrop-blur-xl rounded-3xl border border-border/50 p-10 md:p-14 text-center shadow-2xl">
-              <motion.span 
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6"
-              >
+              <motion.span initial={{
+              opacity: 0,
+              scale: 0.9
+            }} whileInView={{
+              opacity: 1,
+              scale: 1
+            }} viewport={{
+              once: true
+            }} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6">
                 <Sparkles className="w-3.5 h-3.5 text-accent" />
                 <span className="text-accent font-medium text-xs uppercase tracking-wider">Start Here</span>
               </motion.span>
@@ -436,8 +382,6 @@ const About = () => {
           </motion.div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default About;
