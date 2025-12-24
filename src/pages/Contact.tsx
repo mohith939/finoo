@@ -4,11 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MessageCircle, Mail, MapPin } from "lucide-react";
+import { MessageCircle, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
-const WHATSAPP_LINK = "https://wa.me/919999999999?text=Hi%20FINSTICS%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.";
+const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.";
+const PHONE_NUMBER = "+91 8340956469";
+const EMAIL = "finstics@gmail.com";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -90,15 +92,30 @@ const Contact = () => {
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg bg-sage-light flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-accent" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Phone</p>
+                    <a
+                      href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`}
+                      className="text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {PHONE_NUMBER}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-sage-light flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5 text-accent" />
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Email</p>
                     <a
-                      href="mailto:hello@finstics.in"
+                      href={`mailto:${EMAIL}`}
                       className="text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      hello@finstics.in
+                      {EMAIL}
                     </a>
                   </div>
                 </div>

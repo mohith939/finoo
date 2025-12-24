@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import finsticsLogo from "@/assets/finstics-logo.png";
 
-const WHATSAPP_LINK = "https://wa.me/919999999999?text=Hi%20FINSTICS%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.";
+const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.";
+const PHONE_NUMBER = "+91 8340956469";
+const EMAIL = "finstics@gmail.com";
 
 const Footer = () => {
   return (
@@ -10,9 +13,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="inline-block mb-4">
-              <span className="text-2xl font-semibold text-foreground tracking-tight">
-                FINSTICS
-              </span>
+              <img 
+                src={finsticsLogo} 
+                alt="FINSTICS" 
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="body-regular max-w-md mb-6">
               The calm back office for first-time founders. We quietly take care of 
@@ -61,6 +66,14 @@ const Footer = () => {
             <ul className="space-y-3 text-muted-foreground">
               <li>
                 <a 
+                  href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`}
+                  className="hover:text-foreground transition-colors"
+                >
+                  {PHONE_NUMBER}
+                </a>
+              </li>
+              <li>
+                <a 
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -71,10 +84,10 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="mailto:hello@finstics.in"
+                  href={`mailto:${EMAIL}`}
                   className="hover:text-foreground transition-colors"
                 >
-                  hello@finstics.in
+                  {EMAIL}
                 </a>
               </li>
             </ul>
