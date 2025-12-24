@@ -193,11 +193,11 @@ const Services = () => {
                     : "bg-background border-border/60 group-hover:border-accent/30"
                 }`}>
                   {/* Number indicator */}
-                  <span className="absolute top-6 right-8 text-5xl font-display text-foreground/[0.04] group-hover:text-accent/10 transition-colors">
+                  <span className="absolute top-4 right-6 text-6xl font-display font-bold text-accent/15 group-hover:text-accent/25 transition-colors select-none pointer-events-none">
                     0{index + 1}
                   </span>
                   
-                  <div className="flex items-start gap-5 mb-8">
+                  <div className="flex items-start gap-5 mb-8 relative z-10">
                     <div className={`w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 ${
                       service.highlight ? "bg-accent/20" : "bg-gradient-to-br from-accent/15 to-accent/5"
                     }`}>
