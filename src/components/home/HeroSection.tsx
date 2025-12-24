@@ -37,7 +37,7 @@ const HeroSection = () => {
             className="flex items-center gap-4 mb-8"
           >
             <span className="w-12 h-[2px] bg-accent" />
-            <span className="text-accent font-medium tracking-wide uppercase text-sm">
+            <span className="text-accent font-medium tracking-widest uppercase text-xs">
               For early-stage founders
             </span>
           </motion.div>
@@ -46,17 +46,17 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight text-foreground mb-8"
+            className="font-display text-foreground mb-8"
           >
             You focus on
             <br />
             <span className="relative inline-block">
-              <span className="relative z-10">growth</span>
+              <span className="relative z-10 italic">growth</span>
               <motion.span 
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ duration: 0.8, delay: 0.8 }}
-                className="absolute bottom-2 left-0 h-4 bg-accent/20 -z-0"
+                className="absolute bottom-2 md:bottom-3 left-0 h-3 md:h-4 bg-accent/20 -z-0"
               />
             </span>
             <span className="text-muted-foreground">.</span>
@@ -68,12 +68,11 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-12 leading-relaxed"
+            className="text-lg md:text-xl text-muted-foreground max-w-xl mb-12"
           >
-            Finance and compliance can feel overwhelming. 
-            <span className="text-foreground font-medium"> It doesn't have to be.</span>
-            <br className="hidden md:block" />
-            We quietly take care of everything so you can keep building.
+            Finance and compliance can feel overwhelming
+            <span className="text-foreground">—it does not have to be.</span>
+            {" "}We quietly take care of everything so you can keep building.
           </motion.p>
           
           <motion.div

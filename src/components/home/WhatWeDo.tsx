@@ -6,7 +6,7 @@ const WhatWeDo = () => {
     {
       icon: Bell,
       title: "We remind you",
-      description: "No more missed deadlines. We keep track so you don't have to worry.",
+      description: "No more missed deadlines. We keep track so you do not have to worry.",
       accent: true,
     },
     {
@@ -44,12 +44,12 @@ const WhatWeDo = () => {
         >
           <div className="flex items-center gap-4 mb-4">
             <span className="w-8 h-[2px] bg-accent" />
-            <span className="text-accent font-medium text-sm uppercase tracking-wide">Our Role</span>
+            <span className="text-accent font-medium text-xs uppercase tracking-widest">Our Role</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-semibold text-foreground mb-4">
+          <h2 className="font-display text-foreground">
             What we actually do
           </h2>
-          <p className="body-large max-w-2xl">
+          <p className="text-lg text-muted-foreground max-w-2xl mt-4">
             Think of us as your extended team — a quiet back office 
             that carries the finance and compliance load.
           </p>
@@ -63,14 +63,14 @@ const WhatWeDo = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`group relative rounded-3xl p-8 md:p-10 border transition-all duration-500 hover:shadow-lg ${
+              className={`group relative rounded-2xl p-8 md:p-10 border transition-all duration-500 hover:shadow-lg ${
                 role.accent 
                   ? "bg-accent/5 border-accent/20 hover:border-accent/40" 
                   : "bg-card border-border hover:border-accent/30"
               }`}
             >
               {/* Number indicator */}
-              <span className="absolute top-6 right-6 text-6xl font-bold text-foreground/5 group-hover:text-accent/10 transition-colors">
+              <span className="absolute top-6 right-6 text-5xl font-bold text-foreground/5 group-hover:text-accent/10 transition-colors font-display">
                 0{index + 1}
               </span>
               
@@ -80,10 +80,10 @@ const WhatWeDo = () => {
                 <role.icon className="w-7 h-7 text-accent" />
               </div>
               
-              <h3 className="text-2xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors">
+              <h3 className="font-sans font-semibold text-xl text-foreground mb-3 group-hover:text-accent transition-colors">
                 {role.title}
               </h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">
+              <p className="text-muted-foreground">
                 {role.description}
               </p>
             </motion.div>

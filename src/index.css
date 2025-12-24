@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "@fontsource/dm-sans/400.css";
-@import "@fontsource/dm-sans/500.css";
-@import "@fontsource/dm-sans/600.css";
-@import "@fontsource/dm-sans/700.css";
-
 /* FINSTICS Design System
    Calm • Simple • Relief-focused
    Design should disappear. Calm should remain.
@@ -15,7 +10,6 @@
 @layer base {
   :root {
     /* Light Mode - Warm whites and soft tones */
-    /* Anchor - Deep Navy/Charcoal */
     --background: 45 30% 98%;
     --foreground: 220 25% 18%;
 
@@ -134,19 +128,54 @@
 
   html {
     scroll-behavior: smooth;
+    font-size: 16px;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: "DM Sans", system-ui, sans-serif;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight text-foreground;
+  /* Typography Scale - More refined */
+  h1 {
+    @apply text-foreground font-display;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
+
+  h2 {
+    @apply text-foreground font-display;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
+
+  h3 {
+    @apply text-foreground font-sans font-semibold;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  h4 {
+    @apply text-foreground font-sans font-semibold;
+    font-size: 1.125rem;
+    line-height: 1.4;
   }
 
   p {
     @apply leading-relaxed;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Larger body text for readability */
+  .text-lg, .text-xl, .text-2xl {
+    line-height: 1.6;
   }
 }
 

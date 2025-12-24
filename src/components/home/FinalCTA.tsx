@@ -27,24 +27,24 @@ const FinalCTA = () => {
             <span className="w-16 h-1 bg-accent rounded-full" />
           </div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-6 leading-tight">
+          <h2 className="font-display text-foreground mb-6">
             Ready to feel calmer
             <br />
             <span className="text-muted-foreground">about finance?</span>
           </h2>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground mb-12">
             No commitment. No pressure. Just a conversation to see if we are the right fit.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="whatsapp" size="lg" className="group text-lg px-8 py-6" asChild>
+            <Button variant="whatsapp" size="lg" className="group" asChild>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="mr-2 group-hover:scale-110 transition-transform" />
                 Message us on WhatsApp
               </a>
             </Button>
-            <Button variant="calmOutline" size="lg" className="group text-lg px-8 py-6" asChild>
+            <Button variant="calmOutline" size="lg" className="group" asChild>
               <Link to="/contact">
                 Or fill a simple form
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
@@ -57,7 +57,7 @@ const FinalCTA = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-muted-foreground mt-10 flex items-center justify-center gap-2"
+            className="text-muted-foreground mt-10 flex items-center justify-center gap-2 text-sm"
           >
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             We typically respond within a few hours
