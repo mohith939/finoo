@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { MessageCircle, ArrowUpRight, Mail, Phone, MapPin, Sparkles } from "lucide-react";
+import { ArrowUpRight, Mail, Phone, MapPin, Sparkles } from "lucide-react";
 import finsticsLogo from "@/assets/finstics-logo.png";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
 const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.";
 const PHONE_NUMBER = "+91 8340956469";
@@ -63,7 +64,7 @@ const Footer = () => {
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[hsl(142,70%,45%)]/15 to-[hsl(142,70%,45%)]/5 border border-[hsl(142,70%,45%)]/25 text-[hsl(142,70%,45%)] font-semibold hover:border-[hsl(142,70%,45%)]/40 transition-all shadow-lg shadow-[hsl(142,70%,45%)]/5"
               >
-                <MessageCircle className="w-5 h-5" />
+                <WhatsAppIcon className="w-5 h-5" />
                 Message us on WhatsApp
                 <ArrowUpRight className="w-4 h-4 ml-1" />
               </motion.a>

@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MessageCircle, Mail, MapPin, Phone, Sparkles, ArrowRight, Clock, Shield } from "lucide-react";
+import { Mail, MapPin, Phone, Sparkles, ArrowRight, Clock, Shield } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -123,7 +124,7 @@ const Contact = () => {
 
               <Button variant="whatsapp" size="lg" className="group h-14 px-8 mb-10 shadow-lg shadow-[hsl(142,70%,45%)]/20" asChild>
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2.5 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  <WhatsAppIcon className="mr-2.5 h-5 w-5 group-hover:scale-110 transition-transform" />
                   Message on WhatsApp
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>

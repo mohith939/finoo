@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, ArrowRight, Sparkles, Check } from "lucide-react";
+import { ArrowRight, Sparkles, Check } from "lucide-react";
 import { Link } from "react-router-dom";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
 const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.";
 
@@ -75,7 +76,7 @@ const FinalCTA = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
               <Button variant="whatsapp" size="xl" className="group shadow-lg shadow-[hsl(142,70%,45%)]/20 hover:shadow-xl hover:shadow-[hsl(142,70%,45%)]/30 transition-all" asChild>
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2.5 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  <WhatsAppIcon className="mr-2.5 h-5 w-5 group-hover:scale-110 transition-transform" />
                   Message us on WhatsApp
                 </a>
               </Button>
