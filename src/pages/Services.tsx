@@ -1,7 +1,8 @@
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Calculator, BookOpen, Rocket, Globe, FileText, Users, Shield, Wallet, Sparkles, ArrowRight, Check } from "lucide-react";
+import { Calculator, BookOpen, Rocket, Globe, FileText, Users, Shield, Wallet, Sparkles, ArrowRight, Check } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
 const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.";
 
@@ -158,7 +159,7 @@ const Services = () => {
             </p>
             <Button variant="whatsapp" size="lg" className="group h-14 px-8 shadow-lg shadow-[hsl(142,70%,45%)]/20" asChild>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2.5 h-5 w-5 group-hover:scale-110 transition-transform" />
+                <WhatsAppIcon className="mr-2.5 h-5 w-5 group-hover:scale-110 transition-transform" />
                 Talk to us about your needs
               </a>
             </Button>
@@ -272,7 +273,7 @@ const Services = () => {
               
               <Button variant="whatsapp" size="xl" className="group shadow-lg shadow-[hsl(142,70%,45%)]/20 hover:shadow-xl hover:shadow-[hsl(142,70%,45%)]/30 transition-all" asChild>
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2.5 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  <WhatsAppIcon className="mr-2.5 h-5 w-5 group-hover:scale-110 transition-transform" />
                   Let's talk
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>

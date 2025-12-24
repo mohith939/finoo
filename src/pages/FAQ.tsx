@@ -1,7 +1,8 @@
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Sparkles, ArrowRight, HelpCircle } from "lucide-react";
+import { Sparkles, ArrowRight, HelpCircle } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import {
   Accordion,
   AccordionContent,
@@ -179,7 +180,7 @@ const FAQ = () => {
               
               <Button variant="whatsapp" size="xl" className="group shadow-lg shadow-[hsl(142,70%,45%)]/20" asChild>
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2.5 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  <WhatsAppIcon className="mr-2.5 h-5 w-5 group-hover:scale-110 transition-transform" />
                   Ask us anything
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
