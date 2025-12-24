@@ -68,20 +68,32 @@ const FAQ = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-background">
-        <div className="container-calm section-padding">
+      <section className="bg-background relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-20 right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-48 h-48 bg-accent/5 rounded-full blur-2xl" />
+        
+        <div className="container-calm section-padding relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <h1 className="heading-hero text-foreground mb-6">
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="inline-block text-sm font-medium text-accent mb-4 tracking-wide uppercase"
+            >
+              FAQ
+            </motion.span>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium text-foreground mb-6 leading-[1.1]">
               Questions founders
               <br />
-              <span className="text-muted-foreground">actually ask us.</span>
+              <span className="text-muted-foreground italic">actually ask us.</span>
             </h1>
-            <p className="body-large max-w-xl">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-xl leading-relaxed">
               No jargon. Just honest answers to the things you're probably wondering about.
             </p>
           </motion.div>
@@ -100,18 +112,25 @@ const FAQ = () => {
           >
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
-                <AccordionItem
+                <motion.div
                   key={index}
-                  value={`item-${index}`}
-                  className="bg-background rounded-xl border border-border px-6"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
                 >
-                  <AccordionTrigger className="text-left text-base font-medium text-foreground hover:no-underline py-5">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
+                  <AccordionItem
+                    value={`item-${index}`}
+                    className="bg-background rounded-xl border border-border px-6 transition-shadow hover:shadow-md"
+                  >
+                    <AccordionTrigger className="text-left text-base sm:text-lg font-medium text-foreground hover:no-underline py-5 font-sans">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground pb-5 leading-relaxed text-base">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                </motion.div>
               ))}
             </Accordion>
           </motion.div>
@@ -119,8 +138,9 @@ const FAQ = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-background">
-        <div className="container-calm section-padding text-center">
+      <section className="bg-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-transparent" />
+        <div className="container-calm section-padding text-center relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -128,15 +148,15 @@ const FAQ = () => {
             transition={{ duration: 0.5 }}
             className="max-w-xl mx-auto"
           >
-            <h2 className="heading-section text-foreground mb-4">
-              Still have questions?
+            <h2 className="font-display text-3xl sm:text-4xl font-medium text-foreground mb-4 leading-tight">
+              Still have <span className="italic text-accent">questions?</span>
             </h2>
-            <p className="body-large mb-8">
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               We're always happy to chat. No question is too small.
             </p>
             <Button variant="whatsapp" size="lg" asChild>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2" />
+                <MessageCircle className="mr-2 h-5 w-5" />
                 Ask us anything
               </a>
             </Button>
