@@ -46,12 +46,12 @@ const ServicesPreview = () => {
           <div>
             <div className="flex items-center gap-4 mb-4">
               <span className="w-8 h-[2px] bg-accent" />
-              <span className="text-accent font-medium text-sm uppercase tracking-wide">Services</span>
+              <span className="text-accent font-medium text-xs uppercase tracking-widest">Services</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-semibold text-foreground mb-4">
+            <h2 className="font-display text-foreground">
               How we can help
             </h2>
-            <p className="body-large max-w-xl">
+            <p className="text-lg text-muted-foreground max-w-xl mt-4">
               Simple, straightforward services. No complex packages or hidden fees.
             </p>
           </div>
@@ -72,7 +72,7 @@ const ServicesPreview = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`group relative rounded-3xl p-8 md:p-10 border transition-all duration-500 hover:shadow-xl cursor-default ${
+              className={`group relative rounded-2xl p-8 md:p-10 border transition-all duration-500 hover:shadow-xl cursor-default ${
                 service.highlight 
                   ? "bg-foreground text-background border-foreground" 
                   : "bg-card border-border hover:border-accent/30"
@@ -84,10 +84,10 @@ const ServicesPreview = () => {
                 <service.icon className={`w-7 h-7 ${service.highlight ? "text-background" : "text-accent"}`} />
               </div>
               
-              <h3 className={`text-2xl font-semibold mb-3 ${service.highlight ? "text-background" : "text-foreground"}`}>
+              <h3 className={`font-sans font-semibold text-xl mb-3 ${service.highlight ? "text-background" : "text-foreground"}`}>
                 {service.title}
               </h3>
-              <p className={`text-lg leading-relaxed ${service.highlight ? "text-background/70" : "text-muted-foreground"}`}>
+              <p className={`${service.highlight ? "text-background/70" : "text-muted-foreground"}`}>
                 {service.description}
               </p>
               

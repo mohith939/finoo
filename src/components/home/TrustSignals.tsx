@@ -37,9 +37,9 @@ const TrustSignals = () => {
         >
           <div className="flex items-center gap-4 mb-4">
             <span className="w-8 h-[2px] bg-accent" />
-            <span className="text-accent font-medium text-sm uppercase tracking-wide">Why Us</span>
+            <span className="text-accent font-medium text-xs uppercase tracking-widest">Why Us</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-semibold text-background mb-4">
+          <h2 className="font-display text-background">
             Why founders trust us
           </h2>
         </motion.div>
@@ -54,16 +54,13 @@ const TrustSignals = () => {
               transition={{ duration: 0.5, delay: index * 0.15 }}
               className="relative"
             >
-              {/* Accent line on hover */}
-              <div className="absolute -left-4 top-0 w-1 h-full bg-accent/0 hover:bg-accent transition-colors rounded-full" />
-              
-              <div className="w-16 h-16 rounded-2xl bg-background/10 flex items-center justify-center mb-6">
-                <signal.icon className="w-8 h-8 text-accent" />
+              <div className="w-14 h-14 rounded-2xl bg-background/10 flex items-center justify-center mb-6">
+                <signal.icon className="w-7 h-7 text-accent" />
               </div>
-              <h3 className="text-2xl font-semibold text-background mb-3">
+              <h3 className="font-sans font-semibold text-xl text-background mb-3">
                 {signal.title}
               </h3>
-              <p className="text-background/60 text-lg leading-relaxed">
+              <p className="text-background/60">
                 {signal.description}
               </p>
             </motion.div>
@@ -78,7 +75,7 @@ const TrustSignals = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-20 pt-12 border-t border-background/10"
         >
-          <blockquote className="text-2xl md:text-3xl font-medium text-background/90 max-w-3xl italic leading-relaxed">
+          <blockquote className="font-display text-2xl md:text-3xl text-background/90 max-w-3xl italic">
             "Our belief is simple: you focus on growth. We carry the finance and compliance load."
           </blockquote>
           <p className="mt-6 text-accent font-medium">

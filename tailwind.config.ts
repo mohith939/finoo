@@ -73,7 +73,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["DM Sans", "system-ui", "sans-serif"],
+        sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+        display: ["Instrument Serif", "Georgia", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

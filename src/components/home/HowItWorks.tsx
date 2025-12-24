@@ -7,19 +7,19 @@ const HowItWorks = () => {
       icon: MessageCircle,
       number: "01",
       title: "Message us",
-      description: "Start with a simple WhatsApp message. No forms, no calls scheduled, no pressure at all.",
+      description: "Start with a simple WhatsApp message. No forms, no pressure at all.",
     },
     {
       icon: Users,
       number: "02",
       title: "Quick chat",
-      description: "A friendly conversation to understand where you are and what you actually need.",
+      description: "A friendly conversation to understand where you are and what you need.",
     },
     {
       icon: Repeat,
       number: "03",
       title: "Ongoing support",
-      description: "We handle things month-to-month. Grows with you. Cancel anytime, no questions asked.",
+      description: "We handle things month-to-month. Grows with you. Cancel anytime.",
     },
   ];
 
@@ -38,12 +38,12 @@ const HowItWorks = () => {
         >
           <div className="flex items-center gap-4 mb-4">
             <span className="w-8 h-[2px] bg-accent" />
-            <span className="text-accent font-medium text-sm uppercase tracking-wide">Process</span>
+            <span className="text-accent font-medium text-xs uppercase tracking-widest">Process</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-semibold text-foreground mb-4">
+          <h2 className="font-display text-foreground">
             How it works
           </h2>
-          <p className="body-large">
+          <p className="text-lg text-muted-foreground mt-4">
             Three simple steps. That is it.
           </p>
         </motion.div>
@@ -64,20 +64,20 @@ const HowItWorks = () => {
               >
                 {/* Step number with icon */}
                 <div className="relative z-10 mb-8">
-                  <div className="w-20 h-20 rounded-3xl bg-background border-2 border-accent/30 flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-shadow">
+                  <div className="w-20 h-20 rounded-2xl bg-background border-2 border-accent/30 flex items-center justify-center mx-auto shadow-lg">
                     <step.icon className="w-8 h-8 text-accent" />
                   </div>
                   {/* Number badge */}
-                  <span className="absolute -top-2 -right-2 md:right-[calc(50%-3rem)] w-8 h-8 rounded-full bg-accent text-accent-foreground text-sm font-bold flex items-center justify-center shadow-md">
+                  <span className="absolute -top-2 -right-2 md:right-[calc(50%-3rem)] w-8 h-8 rounded-full bg-accent text-accent-foreground text-sm font-semibold flex items-center justify-center shadow-md">
                     {step.number}
                   </span>
                 </div>
                 
                 <div className="text-center">
-                  <h3 className="text-2xl font-semibold text-foreground mb-3">
+                  <h3 className="font-sans font-semibold text-xl text-foreground mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground text-lg leading-relaxed max-w-xs mx-auto">
+                  <p className="text-muted-foreground max-w-xs mx-auto">
                     {step.description}
                   </p>
                 </div>

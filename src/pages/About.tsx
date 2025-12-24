@@ -39,16 +39,16 @@ const About = () => {
           >
             <div className="flex items-center gap-4 mb-6">
               <span className="w-12 h-[2px] bg-accent" />
-              <span className="text-accent font-medium tracking-wide uppercase text-sm">
+              <span className="text-accent font-medium tracking-widest uppercase text-xs">
                 About Us
               </span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground mb-6 leading-tight">
+            <h1 className="font-display text-foreground mb-6">
               The calm back office
               <br />
               <span className="text-muted-foreground">for first-time founders.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
               We started FINSTICS because we saw too many talented founders 
               losing sleep over compliance and finance — things that should not 
               stop them from building.
@@ -64,7 +64,7 @@ const About = () => {
         </div>
         
         <div className="container-calm section-padding">
-          <div className="max-w-4xl">
+          <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -73,12 +73,12 @@ const About = () => {
             >
               <div className="flex items-center gap-4 mb-6">
                 <span className="w-8 h-[2px] bg-accent" />
-                <span className="text-accent font-medium text-sm uppercase tracking-wide">Our Story</span>
+                <span className="text-accent font-medium text-xs uppercase tracking-widest">Our Story</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-semibold text-foreground mb-10">
+              <h2 className="font-display text-foreground mb-10">
                 Why we exist
               </h2>
-              <div className="space-y-6 text-xl text-muted-foreground leading-relaxed">
+              <div className="space-y-6 text-lg text-muted-foreground">
                 <p>
                   Early-stage founders do not avoid finance because they do not care. 
                   They avoid it because it feels scary, expensive, and easy to mess up.
@@ -93,7 +93,7 @@ const About = () => {
                   not to showcase our expertise. When you feel calm, you can focus on what 
                   you do best — building and growing your business.
                 </p>
-                <p className="text-foreground font-medium text-2xl border-l-4 border-accent pl-6">
+                <p className="text-foreground font-medium text-xl border-l-4 border-accent pl-6 py-2">
                   Our belief is simple: You focus on growth. We carry the finance and 
                   compliance load.
                 </p>
@@ -115,9 +115,9 @@ const About = () => {
           >
             <div className="flex items-center gap-4 mb-4">
               <span className="w-8 h-[2px] bg-accent" />
-              <span className="text-accent font-medium text-sm uppercase tracking-wide">Values</span>
+              <span className="text-accent font-medium text-xs uppercase tracking-widest">Values</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-semibold text-foreground">
+            <h2 className="font-display text-foreground">
               What guides us
             </h2>
           </motion.div>
@@ -132,13 +132,13 @@ const About = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group"
               >
-                <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                  <value.icon className="w-8 h-8 text-accent" />
+                <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                  <value.icon className="w-7 h-7 text-accent" />
                 </div>
-                <h3 className="text-2xl font-semibold text-foreground mb-4 group-hover:text-accent transition-colors">
+                <h3 className="font-sans font-semibold text-xl text-foreground mb-4 group-hover:text-accent transition-colors">
                   {value.title}
                 </h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">
+                <p className="text-muted-foreground">
                   {value.description}
                 </p>
               </motion.div>
@@ -150,7 +150,7 @@ const About = () => {
       {/* Who we serve */}
       <section className="bg-foreground text-background">
         <div className="container-calm section-padding">
-          <div className="max-w-4xl">
+          <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -159,12 +159,12 @@ const About = () => {
             >
               <div className="flex items-center gap-4 mb-6">
                 <span className="w-8 h-[2px] bg-accent" />
-                <span className="text-accent font-medium text-sm uppercase tracking-wide">Our Focus</span>
+                <span className="text-accent font-medium text-xs uppercase tracking-widest">Our Focus</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-semibold text-background mb-10">
+              <h2 className="font-display text-background mb-10">
                 Who we serve best
               </h2>
-              <div className="space-y-6 text-xl text-background/70 leading-relaxed">
+              <div className="space-y-6 text-lg text-background/70">
                 <p>
                   We work best with first-time founders and early-stage businesses — 
                   typically less than 20 employees and under ₹2 Cr in revenue.
@@ -193,10 +193,10 @@ const About = () => {
             transition={{ duration: 0.5 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-semibold text-foreground mb-6">
+            <h2 className="font-display text-foreground mb-6">
               Let us talk
             </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-10">
+            <p className="text-lg md:text-xl text-muted-foreground mb-10">
               No sales pitch. Just a conversation to see if we can help.
             </p>
             <Button variant="whatsapp" size="lg" className="group" asChild>

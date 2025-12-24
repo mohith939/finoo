@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Calculator, BookOpen, Rocket, Globe, FileText, Users, Shield, Wallet, ArrowRight } from "lucide-react";
+import { MessageCircle, Calculator, BookOpen, Rocket, Globe, FileText, Users, Shield, Wallet } from "lucide-react";
 
 const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.";
 
@@ -117,7 +117,6 @@ const Services = () => {
     <Layout>
       {/* Hero */}
       <section className="bg-background relative overflow-hidden">
-        {/* Background elements */}
         <div className="absolute -right-32 -top-32 w-[500px] h-[500px] rounded-full bg-accent/5 blur-3xl" />
         
         <div className="container-calm section-padding relative z-10">
@@ -129,16 +128,16 @@ const Services = () => {
           >
             <div className="flex items-center gap-4 mb-6">
               <span className="w-12 h-[2px] bg-accent" />
-              <span className="text-accent font-medium tracking-wide uppercase text-sm">
+              <span className="text-accent font-medium tracking-widest uppercase text-xs">
                 Our Services
               </span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground mb-6 leading-tight">
+            <h1 className="font-display text-foreground mb-6">
               Simple services.
               <br />
               <span className="text-muted-foreground">No complex packages.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-10">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-xl mb-10">
               We do not believe in overwhelming you with options. 
               Here is what we can help with — straightforward and honest.
             </p>
@@ -163,14 +162,13 @@ const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className={`group relative rounded-3xl p-8 md:p-10 border transition-all duration-500 hover:shadow-lg ${
+                className={`group relative rounded-2xl p-8 md:p-10 border transition-all duration-500 hover:shadow-lg ${
                   service.highlight 
                     ? "bg-accent/5 border-accent/20" 
                     : "bg-background border-border"
                 }`}
               >
-                {/* Number indicator */}
-                <span className="absolute top-6 right-6 text-5xl font-bold text-foreground/5">
+                <span className="absolute top-6 right-6 text-4xl font-display text-foreground/5">
                   0{index + 1}
                 </span>
                 
@@ -181,10 +179,10 @@ const Services = () => {
                     <service.icon className="w-7 h-7 text-accent" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-semibold text-foreground group-hover:text-accent transition-colors">
+                    <h3 className="font-sans font-semibold text-xl text-foreground group-hover:text-accent transition-colors">
                       {service.category}
                     </h3>
-                    <p className="text-muted-foreground mt-1">
+                    <p className="text-muted-foreground text-sm mt-1">
                       {service.description}
                     </p>
                   </div>
@@ -193,9 +191,9 @@ const Services = () => {
                   {service.items.map((item, itemIndex) => (
                     <li
                       key={itemIndex}
-                      className="text-muted-foreground flex items-center gap-3"
+                      className="text-muted-foreground flex items-center gap-3 text-sm"
                     >
-                      <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -216,10 +214,10 @@ const Services = () => {
             transition={{ duration: 0.5 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-semibold text-background mb-6">
+            <h2 className="font-display text-background mb-6">
               Not sure what you need?
             </h2>
-            <p className="text-xl md:text-2xl text-background/70 mb-10">
+            <p className="text-lg md:text-xl text-background/70 mb-10">
               That is completely okay. Let us have a quick chat and figure it out together.
             </p>
             <Button variant="whatsapp" size="lg" className="group" asChild>
