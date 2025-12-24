@@ -40,23 +40,51 @@ const About = () => {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-0">
         {/* Animated background elements */}
         <div className="absolute inset-0 bg-background">
+          {/* Large gradient orb */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
             className="absolute -right-48 top-1/4 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-accent/15 via-accent/8 to-transparent blur-3xl"
           />
+          {/* Secondary orb */}
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.7 }}
             transition={{ duration: 2, delay: 0.5 }}
             className="absolute -left-24 bottom-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-accent/10 via-primary/5 to-transparent blur-3xl"
           />
+          {/* Floating particles effect */}
+          <div className="absolute inset-0 overflow-hidden">
+            {[...Array(3)].map((_, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ 
+                  opacity: [0, 0.3, 0],
+                  y: [-100, -400]
+                }}
+                transition={{ 
+                  duration: 8,
+                  delay: i * 3,
+                  repeat: Infinity,
+                  ease: "easeOut"
+                }}
+                className="absolute w-1 h-1 bg-accent rounded-full"
+                style={{ 
+                  left: `${25 + i * 25}%`,
+                  bottom: '20%'
+                }}
+              />
+            ))}
+          </div>
+          {/* Refined grid pattern */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.15)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.15)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_40%,#000_40%,transparent_100%)]" />
         </div>
         
         <div className="container-calm px-6 py-4 md:px-12 lg:px-20 relative z-10">
           <div className="max-w-4xl">
+            {/* Eyebrow with badge style */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -75,11 +103,22 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.15 }}
               className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 leading-[1.05] tracking-tight"
             >
-              The calm back office
+              The{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 text-accent">calm</span>
+                <motion.span 
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.6, delay: 1 }}
+                  className="absolute bottom-2 md:bottom-3 left-0 right-0 h-3 md:h-4 bg-accent/20 origin-left -z-0"
+                />
+              </span>
+              {" "}back office
               <br />
               <span className="text-muted-foreground">for first-time founders.</span>
             </motion.h1>
             
+            {/* Value proposition card */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -87,7 +126,9 @@ const About = () => {
               className="relative max-w-2xl mb-8"
             >
               <div className="relative p-5 md:p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-border/50 backdrop-blur-sm">
+                {/* Accent line */}
                 <div className="absolute left-0 top-5 bottom-5 w-1 bg-gradient-to-b from-accent via-accent/60 to-transparent rounded-full" />
+                
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed pl-5">
                   We started FINSTICS because we saw too many talented founders losing sleep over compliance and finance
                   <span className="block mt-2 text-foreground font-semibold text-xl md:text-2xl">
@@ -97,6 +138,7 @@ const About = () => {
               </div>
             </motion.div>
             
+            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -124,6 +166,7 @@ const About = () => {
               </div>
             </motion.div>
 
+            {/* Trust indicators */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -131,12 +174,17 @@ const About = () => {
               className="mt-10 pt-6 border-t border-border/40"
             >
               <div className="flex flex-wrap items-center gap-8 md:gap-12">
-                {stats.map((stat, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <span className="font-display text-2xl md:text-3xl text-accent">{stat.value}</span>
-                    <span className="text-sm text-muted-foreground">{stat.label}</span>
-                  </div>
-                ))}
+                <div className="flex items-center gap-3">
+                  <span className="flex h-2.5 w-2.5 relative">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
+                  </span>
+                  <span className="text-sm text-muted-foreground">Trusted by founders across India</span>
+                </div>
+                <div className="hidden sm:block w-px h-5 bg-border" />
+                <div className="text-sm text-muted-foreground">
+                  <span className="text-foreground font-semibold">Quick response</span> within hours
+                </div>
               </div>
             </motion.div>
           </div>
