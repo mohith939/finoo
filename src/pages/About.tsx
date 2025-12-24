@@ -33,7 +33,7 @@ const About = () => {
   }];
   return <Layout>
       {/* Hero */}
-      <section className="min-h-[90vh] flex items-center bg-background relative overflow-hidden">
+      <section className="min-h-[90vh] flex items-start pt-8 bg-background relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl animate-pulse" />
