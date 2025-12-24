@@ -26,11 +26,13 @@ const Header = () => {
         <nav className="flex items-center justify-between h-16 md:h-20 px-6">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img 
-              src={finsticsLogo} 
-              alt="FINSTICS" 
-              className="h-9 md:h-11 w-auto"
-            />
+            <div className="bg-white dark:bg-white/95 rounded-lg p-1.5">
+              <img 
+                src={finsticsLogo} 
+                alt="FINSTICS" 
+                className="h-8 md:h-9 w-auto"
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

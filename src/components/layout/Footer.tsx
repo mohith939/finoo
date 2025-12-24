@@ -13,11 +13,13 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="inline-block mb-4">
-              <img 
-                src={finsticsLogo} 
-                alt="FINSTICS" 
-                className="h-11 w-auto"
-              />
+              <div className="bg-white dark:bg-white/95 rounded-lg p-1.5 inline-block">
+                <img 
+                  src={finsticsLogo} 
+                  alt="FINSTICS" 
+                  className="h-9 w-auto"
+                />
+              </div>
             </Link>
             <p className="body-regular max-w-md mb-6">
               The calm back office for first-time founders. We quietly take care of 
