@@ -90,35 +90,55 @@ const HeroSection = () => {
             <span className="text-muted-foreground">We handle the rest.</span>
           </motion.h1>
           
-          <motion.p
+          {/* Value proposition card */}
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-xl mb-14 leading-relaxed"
+            className="relative max-w-2xl mb-12"
           >
-            Finance and compliance can feel overwhelming
-            <span className="text-foreground font-medium">—it does not have to be.</span>
-            {" "}We quietly take care of everything so you can keep building.
-          </motion.p>
+            <div className="relative p-6 md:p-8 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-border/50 backdrop-blur-sm">
+              {/* Accent line */}
+              <div className="absolute left-0 top-6 bottom-6 w-1 bg-gradient-to-b from-accent via-accent/60 to-transparent rounded-full" />
+              
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed pl-5">
+                Finance and compliance can feel overwhelming
+                <span className="block mt-2 text-foreground font-semibold text-xl md:text-2xl">
+                  — it doesn't have to be.
+                </span>
+              </p>
+              <p className="text-base md:text-lg text-muted-foreground mt-4 pl-5">
+                We quietly take care of everything so you can keep building.
+              </p>
+            </div>
+          </motion.div>
           
+          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-5"
           >
-            <Button variant="whatsapp" size="lg" className="group h-14 px-8 text-base" asChild>
+            <Button variant="whatsapp" size="lg" className="group h-14 px-8 text-base shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all" asChild>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="mr-2.5 h-5 w-5 group-hover:scale-110 transition-transform" />
                 Message us on WhatsApp
               </a>
             </Button>
-            <Button variant="ghost" size="lg" className="group h-14 px-6 text-base hover:bg-accent/10" asChild>
-              <a href="#how-we-help">
-                See how we help
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
+            
+            <div className="flex items-center gap-3">
+              <span className="hidden sm:block w-8 h-px bg-border" />
+              <Button variant="ghost" size="lg" className="group h-12 px-5 text-base text-muted-foreground hover:text-accent hover:bg-transparent" asChild>
+                <a href="#how-we-help" className="flex items-center gap-2">
+                  <span className="relative">
+                    See how we help
+                    <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-300" />
+                  </span>
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+            </div>
           </motion.div>
 
           {/* Trust indicators with stats */}
