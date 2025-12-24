@@ -6,7 +6,7 @@ const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-20">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-8">
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-background">
         {/* Large gradient orb */}
