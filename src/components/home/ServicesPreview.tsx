@@ -92,13 +92,13 @@ const ServicesPreview = () => {
                   : "bg-card/60 backdrop-blur-sm border-border/60 group-hover:border-accent/30 group-hover:shadow-xl"
               }`}>
                 {/* Number indicator */}
-                <span className={`absolute top-6 right-8 text-6xl font-bold font-display transition-colors duration-500 ${
-                  service.highlight ? "text-background/10 group-hover:text-background/20" : "text-foreground/[0.03] group-hover:text-accent/10"
+                <span className={`absolute top-4 right-6 text-6xl font-bold font-display transition-colors duration-500 select-none pointer-events-none ${
+                  service.highlight ? "text-background/20 group-hover:text-background/30" : "text-accent/15 group-hover:text-accent/25"
                 }`}>
                   0{index + 1}
                 </span>
                 
-                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-7 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 ${
+                <div className={`relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-7 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 ${
                   service.highlight ? "bg-background/15" : "bg-gradient-to-br from-accent/15 to-accent/5"
                 }`}>
                   <service.icon className={`w-8 h-8 ${service.highlight ? "text-background" : "text-accent"}`} />
