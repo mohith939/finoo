@@ -323,11 +323,11 @@ const About = () => {
                 No sales pitch. Just a conversation to see if we can help.
               </p>
               
-              <Button variant="whatsapp" size="xl" className="group shadow-lg shadow-[hsl(142,70%,45%)]/20" asChild>
+              <Button variant="whatsapp" size="default" className="group shadow-lg shadow-[hsl(142,70%,45%)]/20 md:h-14 md:px-8 md:text-lg" asChild>
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  <WhatsAppIcon className="mr-2.5 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  <WhatsAppIcon className="mr-2 h-4 w-4 md:h-5 md:w-5 group-hover:scale-110 transition-transform" />
                   Start a conversation
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
             </div>
