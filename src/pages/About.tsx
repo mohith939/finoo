@@ -33,64 +33,135 @@ const About = () => {
   }];
   return <Layout>
       {/* Hero */}
-      <section className="bg-background relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute -right-48 -top-48 w-[700px] h-[700px] rounded-full bg-gradient-to-br from-accent/10 to-accent/5 blur-3xl" />
-        <div className="absolute left-0 bottom-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_40%,transparent_100%)]" />
+      <section className="min-h-[90vh] flex items-center bg-background relative overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/3 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
         
-        <div className="container-calm px-6 py-4 md:px-12 lg:px-20 relative z-10">
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.6
-        }} className="max-w-4xl">
-            <motion.span initial={{
-            opacity: 0,
-            y: 20
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.5,
-            delay: 0.1
-          }} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-accent" />
-              <span className="text-accent font-medium text-xs uppercase tracking-wider">About Us</span>
-            </motion.span>
-            
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 leading-[1.1]">
-              The calm back office
-              <br />
-              <span className="text-muted-foreground">for first-time founders.</span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
-              We started FINSTICS because we saw too many talented founders 
-              losing sleep over compliance and finance — things that should not 
-              stop them from building.
-            </p>
-          </motion.div>
+        {/* Floating particles */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-accent/30 rounded-full"
+            style={{
+              left: `${15 + i * 15}%`,
+              top: `${20 + (i % 3) * 25}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: 3 + i * 0.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+        
+        {/* Grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.05)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
-          {/* Stats */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.6,
-          delay: 0.3
-        }} className="mt-16 grid grid-cols-3 gap-8 max-w-xl">
-            {stats.map((stat, index) => <div key={index} className="text-center">
-                <p className="font-display text-3xl md:text-4xl text-accent mb-1">{stat.value}</p>
-                <p className="text-sm text-muted-foreground my-0 mx-[100px]">{stat.label}</p>
-              </div>)}
-          </motion.div>
+        <div className="container-calm section-padding relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {/* Badge */}
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-8"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-accent" />
+                <span className="text-accent font-medium text-xs uppercase tracking-wider">About Us</span>
+              </motion.span>
+
+              {/* Headline */}
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground mb-8 leading-[1.05] tracking-tight">
+                The calm back office
+                <br />
+                <span className="text-accent">for first-time</span>
+                <br />
+                <span className="text-muted-foreground">founders.</span>
+              </h1>
+
+              {/* Value proposition card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="relative max-w-xl mb-10"
+              >
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-accent via-accent/50 to-transparent rounded-full" />
+                <div className="pl-6 py-3">
+                  <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-2">
+                    We started FINSTICS because we saw too many talented founders losing sleep over compliance and finance
+                  </p>
+                  <p className="text-lg md:text-xl text-foreground font-medium">
+                    — things that should not stop them from building.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Dual CTAs */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-16"
+              >
+                <Button 
+                  variant="whatsapp" 
+                  size="lg" 
+                  className="group shadow-lg shadow-[hsl(142,70%,45%)]/20"
+                  asChild
+                >
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                    <WhatsAppIcon className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                    Message us on WhatsApp
+                  </a>
+                </Button>
+                
+                <a 
+                  href="#story" 
+                  className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <span className="w-12 h-px bg-border group-hover:bg-accent group-hover:w-16 transition-all" />
+                  <span className="flex items-center gap-2">
+                    Our story
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </a>
+              </motion.div>
+
+              {/* Trust indicators */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                  </span>
+                  <span>Trusted by founders across India</span>
+                </div>
+                <span className="hidden sm:block w-px h-4 bg-border" />
+                <div className="flex items-center gap-2">
+                  <span className="font-medium text-foreground">Quick response</span>
+                  <span>within hours</span>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
