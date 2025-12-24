@@ -16,7 +16,7 @@ const Footer = () => {
               <img 
                 src={finsticsLogo} 
                 alt="FINSTICS" 
-                className="h-10 w-auto"
+                className="h-11 w-auto"
               />
             </Link>
             <p className="body-regular max-w-md mb-6">
