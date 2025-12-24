@@ -13,7 +13,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="inline-block mb-4">
-              <div className="bg-white dark:bg-white/95 rounded-lg p-1.5 inline-block">
+              <div className="bg-white/95 rounded-lg p-1.5 inline-block">
                 <img 
                   src={finsticsLogo} 
                   alt="FINSTICS" 

@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import ThemeToggle from "@/components/ThemeToggle";
 import finsticsLogo from "@/assets/finstics-logo.png";
 
 const navLinks = [
@@ -26,7 +25,7 @@ const Header = () => {
         <nav className="flex items-center justify-between h-16 md:h-20 px-6">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <div className="bg-white dark:bg-white/95 rounded-lg p-1.5">
+            <div className="bg-white/95 rounded-lg p-1.5">
               <img 
                 src={finsticsLogo} 
                 alt="FINSTICS" 
@@ -52,9 +51,8 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Desktop CTA & Theme Toggle */}
-          <div className="hidden md:flex items-center gap-3">
-            <ThemeToggle />
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center">
             <Button variant="calm" size="sm" asChild>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                 Talk to us
@@ -62,17 +60,14 @@ const Header = () => {
             </Button>
           </div>
 
-          {/* Mobile Right Side */}
-          <div className="flex md:hidden items-center gap-2">
-            <ThemeToggle />
-            <button
-              className="p-2 text-foreground"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            className="flex md:hidden p-2 text-foreground"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </nav>
 
         {/* Mobile Navigation */}

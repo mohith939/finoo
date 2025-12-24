@@ -9,65 +9,7 @@
 
 @layer base {
   :root {
-    /* Light Mode - Warm whites and soft tones */
-    --background: 45 30% 98%;
-    --foreground: 220 25% 18%;
-
-    /* Cards - Slightly warmer */
-    --card: 45 25% 96%;
-    --card-foreground: 220 25% 18%;
-
-    --popover: 45 25% 96%;
-    --popover-foreground: 220 25% 18%;
-
-    /* Primary - Deep Navy (anchor color) */
-    --primary: 220 25% 18%;
-    --primary-foreground: 45 30% 98%;
-
-    /* Secondary - Soft muted */
-    --secondary: 45 15% 92%;
-    --secondary-foreground: 220 25% 18%;
-
-    /* Muted - For subtle text */
-    --muted: 45 10% 90%;
-    --muted-foreground: 220 15% 45%;
-
-    /* Accent - Soft Sage/Teal (action color) */
-    --accent: 158 35% 42%;
-    --accent-foreground: 45 30% 98%;
-
-    /* Destructive */
-    --destructive: 0 65% 55%;
-    --destructive-foreground: 45 30% 98%;
-
-    /* Borders - Very subtle */
-    --border: 45 15% 88%;
-    --input: 45 15% 88%;
-    --ring: 158 35% 42%;
-
-    --radius: 0.75rem;
-
-    /* Custom tokens */
-    --sage: 158 35% 42%;
-    --sage-light: 158 30% 92%;
-    --navy: 220 25% 18%;
-    --navy-light: 220 20% 35%;
-    --warm-white: 45 30% 98%;
-    --cream: 45 25% 96%;
-    
-    /* Sidebar */
-    --sidebar-background: 45 25% 96%;
-    --sidebar-foreground: 220 25% 18%;
-    --sidebar-primary: 158 35% 42%;
-    --sidebar-primary-foreground: 45 30% 98%;
-    --sidebar-accent: 45 15% 92%;
-    --sidebar-accent-foreground: 220 25% 18%;
-    --sidebar-border: 45 15% 88%;
-    --sidebar-ring: 158 35% 42%;
-  }
-
-  .dark {
-    /* Dark Mode - Deep navy backgrounds */
+    /* Dark Mode Only - Deep navy backgrounds */
     --background: 220 25% 10%;
     --foreground: 45 20% 95%;
 
@@ -90,7 +32,7 @@
     --muted: 220 20% 18%;
     --muted-foreground: 220 15% 60%;
 
-    /* Accent - Brighter sage for dark mode */
+    /* Accent - Brighter sage */
     --accent: 158 40% 50%;
     --accent-foreground: 220 25% 10%;
 
@@ -103,7 +45,9 @@
     --input: 220 20% 22%;
     --ring: 158 40% 50%;
 
-    /* Custom tokens for dark mode */
+    --radius: 0.75rem;
+
+    /* Custom tokens */
     --sage: 158 40% 50%;
     --sage-light: 158 30% 20%;
     --navy: 220 25% 10%;
@@ -111,7 +55,7 @@
     --warm-white: 45 20% 95%;
     --cream: 220 25% 14%;
     
-    /* Sidebar dark */
+    /* Sidebar */
     --sidebar-background: 220 25% 12%;
     --sidebar-foreground: 45 20% 95%;
     --sidebar-primary: 158 40% 50%;
