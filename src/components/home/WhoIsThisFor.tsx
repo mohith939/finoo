@@ -22,7 +22,7 @@ const WhoIsThisFor = () => {
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/5 via-transparent to-transparent" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-accent/8 to-transparent blur-3xl rounded-full" />
       
-      <div className="container-calm section-padding relative z-10">
+      <div className="container-calm section-padding py-12 lg:py-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
