@@ -37,13 +37,13 @@ const About = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-background relative overflow-hidden min-h-[70vh] flex items-center">
+      <section className="bg-background relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute -right-48 -top-48 w-[700px] h-[700px] rounded-full bg-gradient-to-br from-accent/10 to-accent/5 blur-3xl" />
         <div className="absolute left-0 bottom-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_40%,transparent_100%)]" />
         
-        <div className="container-calm section-padding relative z-10">
+        <div className="container-calm py-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
