@@ -125,7 +125,7 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-background relative overflow-hidden min-h-[60vh] flex items-center">
+      <section className="bg-background relative overflow-hidden min-h-[60vh] flex items-start pt-8">
         {/* Decorative elements */}
         <div className="absolute -right-48 -top-48 w-[700px] h-[700px] rounded-full bg-gradient-to-br from-accent/10 to-accent/5 blur-3xl" />
         <div className="absolute left-0 bottom-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
