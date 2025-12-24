@@ -9,7 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const WHATSAPP_LINK = "https://wa.me/919999999999?text=Hi%20FINSTICS%2C%20I%20have%20a%20question.";
+const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%20have%20a%20question.";
 
 const faqs = [
   {

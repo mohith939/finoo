@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import finsticsLogo from "@/assets/finstics-logo.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -12,7 +13,7 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-const WHATSAPP_LINK = "https://wa.me/919999999999?text=Hi%20FINSTICS%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.";
+const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,9 +25,11 @@ const Header = () => {
         <nav className="flex items-center justify-between h-16 md:h-20 px-6">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <span className="text-xl md:text-2xl font-semibold text-foreground tracking-tight">
-              FINSTICS
-            </span>
+            <img 
+              src={finsticsLogo} 
+              alt="FINSTICS" 
+              className="h-8 md:h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
