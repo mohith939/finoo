@@ -83,7 +83,7 @@ const About = () => {
         </div>
         
         <div className="container-calm px-6 py-4 md:px-12 lg:px-20 relative z-10">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto">
             {/* Eyebrow with badge style */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
