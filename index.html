@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/finstics-logo.png" />
-    <link rel="apple-touch-icon" href="/finstics-logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,28 +16,96 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     
     <!-- Primary Meta Tags -->
-    <title>FINSTICS — The Calm Finance Partner for Early-Stage Founders</title>
-    <meta name="description" content="You focus on growth. We quietly take care of finance and compliance. FINSTICS is the calm back office for first-time founders in India." />
+    <title>Finstics</title>
+    <meta name="title" content="Finstics — The Calm Finance Partner for Early-Stage Founders" />
+    <meta name="description" content="You focus on growth. We quietly take care of finance and compliance. Finstics is the calm back office for first-time founders in India." />
+    <meta name="keywords" content="finance, compliance, bookkeeping, GST, TDS, startup accounting, CFO services, India, early-stage founders, startup finance" />
+    <meta name="author" content="Finstics" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://finstics.in/" />
-    <meta property="og:title" content="FINSTICS — The Calm Finance Partner for Early-Stage Founders" />
-    <meta property="og:description" content="You focus on growth. We quietly take care of finance and compliance. FINSTICS is the calm back office for first-time founders in India." />
-    <meta property="og:image" content="/finstics-logo.png" />
+    <meta property="og:site_name" content="Finstics" />
+    <meta property="og:title" content="Finstics — The Calm Finance Partner for Early-Stage Founders" />
+    <meta property="og:description" content="You focus on growth. We quietly take care of finance and compliance. Finstics is the calm back office for first-time founders in India." />
+    <meta property="og:image" content="https://finstics.in/finstics-logo.png" />
+    <meta property="og:image:alt" content="Finstics Logo" />
+    <meta property="og:locale" content="en_IN" />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@finstics" />
-    <meta name="twitter:title" content="FINSTICS — The Calm Finance Partner for Early-Stage Founders" />
-    <meta name="twitter:description" content="You focus on growth. We quietly take care of finance and compliance. FINSTICS is the calm back office for first-time founders in India." />
-    <meta name="twitter:image" content="/finstics-logo.png" />
+    <meta name="twitter:creator" content="@finstics" />
+    <meta name="twitter:title" content="Finstics — The Calm Finance Partner for Early-Stage Founders" />
+    <meta name="twitter:description" content="You focus on growth. We quietly take care of finance and compliance. Finstics is the calm back office for first-time founders in India." />
+    <meta name="twitter:image" content="https://finstics.in/finstics-logo.png" />
     
     <!-- Canonical -->
     <link rel="canonical" href="https://finstics.in/" />
     
     <!-- Theme Color -->
-    <meta name="theme-color" content="#f9f8f6" />
+    <meta name="theme-color" content="#1a365d" />
+    <meta name="msapplication-TileColor" content="#1a365d" />
+    
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="IN" />
+    <meta name="geo.placename" content="India" />
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Finstics",
+      "url": "https://finstics.in",
+      "logo": "https://finstics.in/finstics-logo.png",
+      "description": "The calm finance partner for early-stage founders in India. We handle bookkeeping, GST, TDS, compliance, and CFO services.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-XXXXXXXXXX",
+        "contactType": "customer service",
+        "email": "finstics@gmail.com",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "sameAs": [],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "serviceType": ["Bookkeeping", "GST Filing", "TDS Compliance", "CFO Services", "Financial Consulting"]
+    }
+    </script>
+    
+    <!-- Professional Service Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Finstics",
+      "image": "https://finstics.in/finstics-logo.png",
+      "url": "https://finstics.in",
+      "telephone": "+91-XXXXXXXXXX",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

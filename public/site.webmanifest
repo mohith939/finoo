@@ -1,0 +1,17 @@
+{
+  "name": "Finstics",
+  "short_name": "Finstics",
+  "description": "The calm finance partner for early-stage founders in India",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9f8f6",
+  "theme_color": "#1a365d",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
