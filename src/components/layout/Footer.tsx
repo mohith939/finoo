@@ -147,8 +147,25 @@ const Footer = () => {
                       <MapPin className="w-4 h-4 text-accent" />
                     </span>
                     <div>
-                      <span className="text-xs text-muted-foreground/70 block">Location</span>
-                      <span className="font-medium leading-relaxed">Shirdi Nagar, Yeleswaram, Kakinada District, AP - 533429</span>
+                      <span className="text-xs text-muted-foreground/70 block">Andhra Pradesh</span>
+                      <span className="font-medium leading-relaxed text-sm">Shirdi Nagar, Yeleswaram, Kakinada District - 533429</span>
+                    </div>
+                  </motion.a>
+                </li>
+                <li>
+                  <motion.a 
+                    href="https://maps.google.com/?q=Dangipara+Sevoke+More+Siliguri+Darjeeling+734001+West+Bengal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ x: 4 }}
+                    className="flex items-start gap-4 text-muted-foreground hover:text-foreground transition-colors group p-3 -ml-3 rounded-xl hover:bg-accent/5"
+                  >
+                    <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-accent/15 to-accent/5 border border-accent/10 flex items-center justify-center group-hover:border-accent/20 transition-colors flex-shrink-0">
+                      <MapPin className="w-4 h-4 text-accent" />
+                    </span>
+                    <div>
+                      <span className="text-xs text-muted-foreground/70 block">West Bengal</span>
+                      <span className="font-medium leading-relaxed text-sm">1st Floor, Rupa Store, Dangipara, Sevoke More, Siliguri - 734001</span>
                     </div>
                   </motion.a>
                 </li>
