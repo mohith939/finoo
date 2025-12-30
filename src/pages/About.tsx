@@ -369,7 +369,7 @@ const About = () => {
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
                   We work best with first-time founders and early-stage businesses — 
-                  typically less than 20 employees and under ₹2 Cr in revenue.
+                  typically less than 20 employees and under ₹4 Cr in revenue.
                 </p>
                 <p>
                   We have a special focus on founders from Tier-2 and Tier-3 cities 
