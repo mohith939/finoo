@@ -136,15 +136,21 @@ const Footer = () => {
                   </motion.a>
                 </li>
                 <li>
-                  <div className="flex items-center gap-4 text-muted-foreground p-3 -ml-3">
-                    <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-accent/15 to-accent/5 border border-accent/10 flex items-center justify-center">
+                  <motion.a 
+                    href="https://maps.google.com/?q=Shirdi+Nagar+Yeleswaram+Kakinada+District+Andhra+Pradesh+533429"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ x: 4 }}
+                    className="flex items-start gap-4 text-muted-foreground hover:text-foreground transition-colors group p-3 -ml-3 rounded-xl hover:bg-accent/5"
+                  >
+                    <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-accent/15 to-accent/5 border border-accent/10 flex items-center justify-center group-hover:border-accent/20 transition-colors flex-shrink-0">
                       <MapPin className="w-4 h-4 text-accent" />
                     </span>
                     <div>
                       <span className="text-xs text-muted-foreground/70 block">Location</span>
-                      <span className="font-medium">Based in India</span>
+                      <span className="font-medium leading-relaxed">Shirdi Nagar, Yeleswaram, Kakinada District, AP - 533429</span>
                     </div>
-                  </div>
+                  </motion.a>
                 </li>
               </ul>
             </div>
