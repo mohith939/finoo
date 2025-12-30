@@ -27,8 +27,8 @@ const ServicesPreview = () => {
     },
     {
       icon: Globe,
-      title: "Basic Tech Help",
-      description: "Simple website and tech setup to establish your digital presence.",
+      title: "Tech & Automation",
+      description: "Website setup, automation workflows, and tools to streamline your operations.",
       gradient: "from-amber-500/20 to-orange-500/10",
       highlight: true,
     },
