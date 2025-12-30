@@ -1,3 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+# Robots.txt for Finstics
+
 User-agent: Googlebot
 Allow: /
 
@@ -12,3 +15,9 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: https://finstics.in/sitemap.xml
+
+# Crawl delay (optional, helps with server load)
+Crawl-delay: 1
