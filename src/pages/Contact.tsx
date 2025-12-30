@@ -6,8 +6,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, MapPin, Phone, Sparkles, ArrowRight, Clock, Shield } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.";
 const PHONE_NUMBER = "+91 8340956469";
@@ -22,17 +23,35 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLDivElement>(null);
+
+  const scrollToForm = () => {
+    formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const { data, error } = await supabase.functions.invoke('submit-contact-form', {
+        body: formData,
+      });
 
-    toast.success("Message sent! We'll get back to you soon.");
-    setFormData({ name: "", phone: "", email: "", company: "", message: "" });
-    setIsSubmitting(false);
+      if (error) {
+        console.error('Form submission error:', error);
+        toast.error("Something went wrong. Please try again.");
+        return;
+      }
+
+      toast.success("Message sent! We'll get back to you soon.");
+      setFormData({ name: "", phone: "", email: "", company: "", message: "" });
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -180,14 +199,17 @@ const Contact = () => {
               
               <div className="flex items-center gap-3">
                 <span className="hidden sm:block w-8 h-px bg-border" />
-                <Button variant="ghost" size="lg" className="group h-12 px-5 text-base text-muted-foreground hover:text-accent hover:bg-transparent" asChild>
-                  <a href="#contact-form" className="flex items-center gap-2">
-                    <span className="relative">
-                      Fill out form
-                      <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-300" />
-                    </span>
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                <Button 
+                  variant="ghost" 
+                  size="lg" 
+                  className="group h-12 px-5 text-base text-muted-foreground hover:text-accent hover:bg-transparent"
+                  onClick={scrollToForm}
+                >
+                  <span className="relative">
+                    Fill out form
+                    <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-300" />
+                  </span>
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
             </motion.div>
@@ -290,11 +312,12 @@ const Contact = () => {
 
             {/* Right - Form */}
             <motion.div
+              ref={formRef}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="lg:col-span-3"
+              className="lg:col-span-3 scroll-mt-24"
             >
               <div className="bg-background rounded-3xl p-8 md:p-10 border border-border/60 shadow-xl shadow-black/5">
                 <div className="flex items-center gap-3 mb-8">
