@@ -75,9 +75,15 @@ const Contact = () => {
     },
     {
       icon: MapPin,
-      title: "Location",
+      title: "Location (Andhra Pradesh)",
       value: "Shirdi Nagar, Yeleswaram, Kakinada District, Andhra Pradesh - 533429",
       href: "https://maps.google.com/?q=Shirdi+Nagar+Yeleswaram+Kakinada+District+Andhra+Pradesh+533429",
+    },
+    {
+      icon: MapPin,
+      title: "Location (West Bengal)",
+      value: "1st Floor, Rupa Store, Beside Galaxy Music, Near Ashiq Manzil, Dangipara, Sevoke More, Siliguri, Darjeeling - 734001",
+      href: "https://maps.google.com/?q=Dangipara+Sevoke+More+Siliguri+Darjeeling+734001+West+Bengal",
     },
   ];
 
