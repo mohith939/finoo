@@ -76,8 +76,8 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Location",
-      value: "Based in India",
-      href: null,
+      value: "Shirdi Nagar, Yeleswaram, Kakinada District, Andhra Pradesh - 533429",
+      href: "https://maps.google.com/?q=Shirdi+Nagar+Yeleswaram+Kakinada+District+Andhra+Pradesh+533429",
     },
   ];
 
