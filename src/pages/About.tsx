@@ -33,38 +33,52 @@ const About = () => {
   }];
   return <Layout>
       {/* Hero */}
-      <section className="min-h-[90vh] flex items-start pt-8 bg-background relative overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-0">
         {/* Animated background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/3 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute inset-0 bg-background">
+          {/* Large gradient orb */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="absolute -right-48 top-1/4 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-accent/15 via-accent/8 to-transparent blur-3xl"
+          />
+          {/* Secondary orb */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.7 }}
+            transition={{ duration: 2, delay: 0.5 }}
+            className="absolute -left-24 bottom-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-accent/10 via-primary/5 to-transparent blur-3xl"
+          />
+          {/* Floating particles effect */}
+          <div className="absolute inset-0 overflow-hidden">
+            {[...Array(3)].map((_, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ 
+                  opacity: [0, 0.3, 0],
+                  y: [-100, -400]
+                }}
+                transition={{ 
+                  duration: 8,
+                  delay: i * 3,
+                  repeat: Infinity,
+                  ease: "easeOut"
+                }}
+                className="absolute w-1 h-1 bg-accent rounded-full"
+                style={{ 
+                  left: `${25 + i * 25}%`,
+                  bottom: '20%'
+                }}
+              />
+            ))}
+          </div>
+          {/* Refined grid pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.15)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.15)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_40%,#000_40%,transparent_100%)]" />
         </div>
         
-        {/* Floating particles */}
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-accent/30 rounded-full"
-            style={{
-              left: `${15 + i * 15}%`,
-              top: `${20 + (i % 3) * 25}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.3, 0.8, 0.3],
-            }}
-            transition={{
-              duration: 3 + i * 0.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-        
-        {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.05)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-
-        <div className="container-calm section-padding relative z-10">
+        <div className="container-calm px-6 py-4 md:px-12 lg:px-20 relative z-10">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
