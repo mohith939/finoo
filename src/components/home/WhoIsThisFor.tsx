@@ -5,7 +5,7 @@ const WhoIsThisFor = () => {
   const idealFounder = [
     "First-time or early-stage founders",
     "Less than 20 employees",
-    "Under ₹2 Cr ARR",
+    "Under ₹4 Cr ARR",
     "No in-house finance team",
     "Want a partner, not a vendor",
   ];
