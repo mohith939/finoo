@@ -33,10 +33,10 @@ Disallow: /api/
 Disallow: /*.json$
 
 # Sitemap location
-Sitemap: https://finstics.in/sitemap.xml
+Sitemap: https://finstics.com/sitemap.xml
 
 # Crawl delay (optional, helps with server load)
 Crawl-delay: 1
 
 # Host directive for Yandex
-Host: https://finstics.in
+Host: https://finstics.com
