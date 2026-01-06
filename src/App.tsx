@@ -7,8 +7,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/hooks/useTheme";
 import ScrollToTop from "@/components/ScrollToTop";
 
-// Lazy load pages for code splitting
-const Index = lazy(() => import("./pages/Index"));
+// Eager load Index for faster initial render
+import Index from "./pages/Index";
+
+// Lazy load other pages for code splitting
 const Services = lazy(() => import("./pages/Services"));
 const About = lazy(() => import("./pages/About"));
 const FAQ = lazy(() => import("./pages/FAQ"));
