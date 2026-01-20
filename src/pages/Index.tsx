@@ -6,6 +6,7 @@ import ServicesPreview from "@/components/home/ServicesPreview";
 import HowItWorks from "@/components/home/HowItWorks";
 import TrustSignals from "@/components/home/TrustSignals";
 import FinalCTA from "@/components/home/FinalCTA";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
       <HowItWorks />
       <TrustSignals />
       <FinalCTA />
+      <FloatingWhatsApp />
     </Layout>
   );
 };

@@ -73,22 +73,25 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 leading-[1.05] tracking-tight"
+            className="font-display text-4xl sm:text-5xl lg:text-7xl text-foreground mb-8 leading-[1.1] tracking-tight"
           >
-            You focus on
-            <br />
+            <span className="block text-muted-foreground/70 text-2xl sm:text-3xl lg:text-4xl font-normal mb-3 tracking-normal">
+              You focus on
+            </span>
             <span className="relative inline-block">
-              <span className="relative z-10 text-accent">growth</span>
+              <span className="relative z-10 bg-gradient-to-r from-accent via-accent to-accent/80 bg-clip-text text-transparent">
+                growth
+              </span>
               <motion.span 
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
-                transition={{ duration: 0.6, delay: 1 }}
-                className="absolute bottom-2 md:bottom-3 left-0 right-0 h-3 md:h-4 bg-accent/20 origin-left -z-0"
+                transition={{ duration: 0.8, delay: 1 }}
+                className="absolute -bottom-1 md:bottom-0 left-0 right-0 h-1 md:h-1.5 bg-gradient-to-r from-accent to-accent/50 origin-left rounded-full"
               />
             </span>
-            <span className="text-muted-foreground/60">.</span>
+            <span className="text-muted-foreground/40">.</span>
             <br />
-            <span className="text-muted-foreground">We handle the rest.</span>
+            <span className="text-foreground/90">We handle the rest.</span>
           </motion.h1>
           
           {/* Value proposition card */}
