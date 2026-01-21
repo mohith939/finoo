@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -89,6 +90,11 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO 
+        title="Contact Finstics — Talk to Us About Finance & Compliance"
+        description="Get in touch with Finstics via WhatsApp, email, or our simple contact form. Quick response within hours. No commitment, just a chat to see if we can help."
+        canonical="https://finstics.com/contact"
+      />
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-0">
         {/* Animated background elements */}
