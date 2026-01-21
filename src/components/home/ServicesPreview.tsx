@@ -20,7 +20,7 @@ const ServicesPreview = () => {
       icon: Rocket,
       title: "Startup Setup",
       description: "Company registration and agreements to get you started.",
-      tags: ["Pvt Ltd", "LLP"],
+      tags: ["Pvt Ltd", "LLP", "OPC", "Proprietor"],
     },
     {
       icon: Globe,
