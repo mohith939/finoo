@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Heart, Target, Lightbulb, Quote, Sparkles, ArrowRight, Users, MapPin } from "lucide-react";
@@ -32,6 +33,11 @@ const About = () => {
     label: "Hidden fees"
   }];
   return <Layout>
+      <SEO 
+        title="About Finstics — The Calm Finance Partner for Founders"
+        description="We started Finstics to help early-stage founders focus on growth while we handle finance and compliance. Learn our story, values, and who we serve."
+        canonical="https://finstics.com/about"
+      />
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-0">
         {/* Animated background elements */}

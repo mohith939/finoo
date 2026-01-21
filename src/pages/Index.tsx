@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import HeroSection from "@/components/home/HeroSection";
 import WhoIsThisFor from "@/components/home/WhoIsThisFor";
 import WhatWeDo from "@/components/home/WhatWeDo";
@@ -10,6 +11,11 @@ import FinalCTA from "@/components/home/FinalCTA";
 const Index = () => {
   return (
     <Layout>
+      <SEO 
+        title="Finstics — Finance & Compliance for Startups in India"
+        description="You focus on growth. We handle finance and compliance. The calm back office for early-stage founders in India. GST, TDS, bookkeeping & more."
+        canonical="https://finstics.com/"
+      />
       <HeroSection />
       <WhoIsThisFor />
       <WhatWeDo />

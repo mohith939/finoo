@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Calculator, BookOpen, Rocket, Globe, FileText, Users, Shield, Wallet, Sparkles, ArrowRight, Check } from "lucide-react";
@@ -124,6 +125,11 @@ const services = [
 const Services = () => {
   return (
     <Layout>
+      <SEO 
+        title="Our Services — GST, Compliance & Bookkeeping | Finstics"
+        description="GST registration & filing, TDS compliance, bookkeeping, company registration, payroll & more. Simple services for early-stage founders in India."
+        canonical="https://finstics.com/services"
+      />
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-0">
         {/* Animated background elements */}

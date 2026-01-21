@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Sparkles, ArrowRight, HelpCircle } from "lucide-react";
@@ -68,6 +69,11 @@ const faqs = [
 const FAQ = () => {
   return (
     <Layout>
+      <SEO 
+        title="FAQ — Common Questions About Finstics Services"
+        description="Get honest answers to common questions about our pricing, services, how we work, and what makes Finstics different from a regular CA."
+        canonical="https://finstics.com/faq"
+      />
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-0">
         {/* Animated background elements */}
