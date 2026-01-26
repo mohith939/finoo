@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { Sparkles, ExternalLink } from "lucide-react";
 import goldenHarvestLogo from "@/assets/clients/golden-harvest-logo.png";
 import eneeraLogo from "@/assets/clients/eneera-logo.png";
 
@@ -7,6 +7,7 @@ interface Client {
   name: string;
   logo: string;
   description: string;
+  website: string;
 }
 
 const clients: Client[] = [
@@ -14,11 +15,13 @@ const clients: Client[] = [
     name: "Golden Harvest Raw Powders",
     logo: goldenHarvestLogo,
     description: "Website Design & Full Finance Services",
+    website: "https://ghrawpowders.com",
   },
   {
     name: "Eneera",
     logo: eneeraLogo,
     description: "Website Design & Full Finance Services",
+    website: "https://eneera.store",
   },
 ];
 
@@ -66,13 +69,16 @@ const ClientShowcase = ({ variant = "home" }: ClientShowcaseProps) => {
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
           {clients.map((client, index) => (
-            <motion.div
+            <motion.a
               key={client.name}
+              href={client.website}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="group"
+              className="group block cursor-pointer"
             >
               <div className="relative bg-background rounded-3xl p-8 lg:p-10 border border-border/60 transition-all duration-500 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5">
                 {/* Hover glow */}
@@ -85,18 +91,23 @@ const ClientShowcase = ({ variant = "home" }: ClientShowcaseProps) => {
                       src={client.logo}
                       alt={`${client.name} logo`}
                       className="max-h-20 max-w-full object-contain"
+                      loading="lazy"
                     />
                   </div>
 
-                  <h3 className="font-semibold text-xl text-foreground mb-2 group-hover:text-accent transition-colors">
+                  <h3 className="font-semibold text-xl text-foreground mb-2 group-hover:text-accent transition-colors flex items-center gap-2">
                     {client.name}
+                    <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </h3>
                   <p className="text-muted-foreground text-sm">
                     {client.description}
                   </p>
+                  <span className="mt-3 text-xs text-accent opacity-0 group-hover:opacity-100 transition-opacity">
+                    Visit website →
+                  </span>
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
