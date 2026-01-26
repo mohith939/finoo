@@ -186,6 +186,9 @@ const About = () => {
         </div>
       </section>
 
+      {/* Client Showcase - Moved to top */}
+      <ClientShowcase variant="about" />
+
       {/* Story */}
       <section className="bg-card relative overflow-hidden">
         <motion.div initial={{
@@ -426,8 +429,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Client Showcase */}
-      <ClientShowcase variant="about" />
 
       {/* CTA */}
       <section className="bg-background relative overflow-hidden">

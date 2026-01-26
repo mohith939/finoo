@@ -93,6 +93,9 @@ const ClientShowcase = ({ variant = "home" }: ClientShowcaseProps) => {
                       alt={`${client.name} logo`}
                       className="max-h-20 max-w-full object-contain"
                       loading="lazy"
+                      decoding="async"
+                      width={160}
+                      height={80}
                     />
                   </div>
 
