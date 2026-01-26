@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Heart, Target, Lightbulb, Quote, Sparkles, ArrowRight, Users, MapPin } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
+import ClientShowcase from "@/components/home/ClientShowcase";
 const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.";
 const About = () => {
   const values = [{
@@ -424,6 +425,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Client Showcase */}
+      <ClientShowcase variant="about" />
 
       {/* CTA */}
       <section className="bg-background relative overflow-hidden">
