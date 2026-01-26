@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { Sparkles, ExternalLink } from "lucide-react";
 import goldenHarvestLogo from "@/assets/clients/golden-harvest-logo.png";
@@ -115,4 +116,4 @@ const ClientShowcase = ({ variant = "home" }: ClientShowcaseProps) => {
   );
 };
 
-export default ClientShowcase;
+export default memo(ClientShowcase);
