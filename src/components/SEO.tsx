@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, memo } from "react";
 
 interface SEOProps {
   title: string;
@@ -6,57 +6,36 @@ interface SEOProps {
   canonical?: string;
 }
 
-const SEO = ({ title, description, canonical }: SEOProps) => {
+const SEO = memo(({ title, description, canonical }: SEOProps) => {
   useEffect(() => {
     // Update document title
     document.title = title;
     
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", description);
-    }
+    // Helper to update meta tag
+    const updateMeta = (selector: string, content: string) => {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute("content", content);
+    };
     
-    // Update OG title
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-      ogTitle.setAttribute("content", title);
-    }
-    
-    // Update OG description
-    const ogDescription = document.querySelector('meta[property="og:description"]');
-    if (ogDescription) {
-      ogDescription.setAttribute("content", description);
-    }
-    
-    // Update Twitter title
-    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twitterTitle) {
-      twitterTitle.setAttribute("content", title);
-    }
-    
-    // Update Twitter description
-    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
-    if (twitterDescription) {
-      twitterDescription.setAttribute("content", description);
-    }
+    // Update meta tags
+    updateMeta('meta[name="description"]', description);
+    updateMeta('meta[property="og:title"]', title);
+    updateMeta('meta[property="og:description"]', description);
+    updateMeta('meta[name="twitter:title"]', title);
+    updateMeta('meta[name="twitter:description"]', description);
     
     // Update canonical URL
     if (canonical) {
-      let canonicalLink = document.querySelector('link[rel="canonical"]');
-      if (canonicalLink) {
-        canonicalLink.setAttribute("href", canonical);
-      }
+      const canonicalLink = document.querySelector('link[rel="canonical"]');
+      if (canonicalLink) canonicalLink.setAttribute("href", canonical);
       
-      // Update OG URL
-      const ogUrl = document.querySelector('meta[property="og:url"]');
-      if (ogUrl) {
-        ogUrl.setAttribute("content", canonical);
-      }
+      updateMeta('meta[property="og:url"]', canonical);
     }
   }, [title, description, canonical]);
 
   return null;
-};
+});
+
+SEO.displayName = "SEO";
 
 export default SEO;
