@@ -178,7 +178,7 @@ const Footer = () => {
         <div className="border-t border-border/20">
           <div className="py-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground/80">
-              © {new Date().getFullYear()} FINSTICS. Helping founders focus on what matters.
+              © 2025 FINSTICS. Helping founders focus on what matters.
             </p>
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2 text-sm">
