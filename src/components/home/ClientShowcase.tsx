@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, ExternalLink } from "lucide-react";
+import { Sparkles, ExternalLink, Plus } from "lucide-react";
 import goldenHarvestLogo from "@/assets/clients/golden-harvest-logo.png";
 import eneeraLogo from "@/assets/clients/eneera-logo.png";
 
@@ -119,6 +119,34 @@ const ClientShowcase = ({ variant = "home" }: ClientShowcaseProps) => {
               </div>
             </motion.a>
           ))}
+
+          {/* Many More Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: clients.length * 0.1 }}
+            className="group"
+          >
+            <div className="relative bg-[hsl(220,20%,12%)] rounded-2xl p-8 lg:p-10 border border-dashed border-accent/30 transition-all duration-300 h-full flex items-center justify-center">
+              <div className="relative flex flex-col items-center text-center">
+                {/* Plus icon container */}
+                <div className="w-20 h-20 lg:w-24 lg:h-24 mb-6 flex items-center justify-center bg-accent/10 rounded-xl border-2 border-accent/20">
+                  <Plus className="w-10 h-10 lg:w-12 lg:h-12 text-accent/60" />
+                </div>
+
+                {/* Title */}
+                <h3 className="font-semibold text-lg lg:text-xl text-foreground mb-3">
+                  Many More
+                </h3>
+                
+                {/* Description */}
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Growing businesses we're proud to support
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
