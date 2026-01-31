@@ -68,47 +68,50 @@ const ClientShowcase = ({ variant = "home" }: ClientShowcaseProps) => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto space-y-6">
           {clients.map((client, index) => (
             <motion.a
               key={client.name}
               href={client.website}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group block cursor-pointer"
             >
-              <div className="relative bg-background rounded-3xl p-8 lg:p-10 border border-border/60 transition-all duration-500 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5">
+              <div className="relative bg-background rounded-2xl p-6 lg:p-8 border border-border/60 transition-all duration-300 hover:border-accent/40 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1">
                 {/* Hover glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-accent/10 to-accent/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                <div className="relative flex flex-col items-center text-center">
-                  {/* Logo container with white background for visibility */}
-                  <div className="w-full h-28 mb-6 flex items-center justify-center bg-white rounded-2xl p-4 transition-transform duration-300 group-hover:scale-105">
+                <div className="relative flex items-center gap-6">
+                  {/* Logo container */}
+                  <div className="flex-shrink-0 w-20 h-20 lg:w-24 lg:h-24 flex items-center justify-center bg-white rounded-xl p-3 transition-transform duration-300 group-hover:scale-105 shadow-sm">
                     <img
                       src={client.logo}
                       alt={`${client.name} logo`}
-                      className="max-h-20 max-w-full object-contain"
+                      className="max-h-16 lg:max-h-20 max-w-full object-contain"
                       loading="lazy"
                       decoding="async"
-                      width={160}
+                      width={80}
                       height={80}
                     />
                   </div>
 
-                  <h3 className="font-semibold text-xl text-foreground mb-2 group-hover:text-accent transition-colors flex items-center gap-2">
-                    {client.name}
-                    <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {client.description}
-                  </p>
-                  <span className="mt-3 text-xs text-accent opacity-0 group-hover:opacity-100 transition-opacity">
-                    Visit website →
-                  </span>
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-lg lg:text-xl text-foreground mb-1 group-hover:text-accent transition-colors truncate">
+                      {client.name}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-3">
+                      {client.description}
+                    </p>
+                    <span className="inline-flex items-center gap-2 text-sm font-medium text-accent">
+                      Visit website
+                      <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
+                    </span>
+                  </div>
                 </div>
               </div>
             </motion.a>
