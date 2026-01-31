@@ -83,7 +83,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Location (West Bengal)",
-      value: "1st Floor, Rupa Store, Beside Galaxy Music, Near Ashiq Manzil, Dangipara, Sevoke More, Siliguri, Darjeeling - 734001",
+      value: "Dangipara, Sevoke More, Siliguri, Darjeeling - 734001",
       href: "https://maps.google.com/?q=Dangipara+Sevoke+More+Siliguri+Darjeeling+734001+West+Bengal",
     },
   ];

@@ -165,7 +165,7 @@ const Footer = () => {
                     </span>
                     <div>
                       <span className="text-xs text-muted-foreground/70 block">West Bengal</span>
-                      <span className="font-medium leading-relaxed text-sm">1st Floor, Rupa Store, Dangipara, Sevoke More, Siliguri - 734001</span>
+                      <span className="font-medium leading-relaxed text-sm">Dangipara, Sevoke More, Siliguri - 734001</span>
                     </div>
                   </motion.a>
                 </li>
