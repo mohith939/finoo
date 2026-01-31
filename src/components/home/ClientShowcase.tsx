@@ -120,19 +120,18 @@ const ClientShowcase = ({ variant = "home" }: ClientShowcaseProps) => {
             </motion.a>
           ))}
 
-          {/* Many More Card */}
+          {/* Many More - Simple text, same card style */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: clients.length * 0.1 }}
-            className="group"
           >
-            <div className="relative bg-[hsl(220,20%,12%)] rounded-2xl p-8 lg:p-10 border border-dashed border-accent/30 transition-all duration-300 h-full flex items-center justify-center">
+            <div className="relative bg-[hsl(220,20%,12%)] rounded-2xl p-8 lg:p-10 border border-accent/20 h-full">
               <div className="relative flex flex-col items-center text-center">
-                {/* Plus icon container */}
-                <div className="w-20 h-20 lg:w-24 lg:h-24 mb-6 flex items-center justify-center bg-accent/10 rounded-xl border-2 border-accent/20">
-                  <Plus className="w-10 h-10 lg:w-12 lg:h-12 text-accent/60" />
+                {/* Plus icon container - same style as logo containers */}
+                <div className="w-20 h-20 lg:w-24 lg:h-24 mb-6 flex items-center justify-center bg-accent/10 rounded-xl border-2 border-accent/30">
+                  <Plus className="w-10 h-10 lg:w-12 lg:h-12 text-accent" />
                 </div>
 
                 {/* Title */}
