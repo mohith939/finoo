@@ -68,7 +68,8 @@ const ClientShowcase = ({ variant = "home" }: ClientShowcaseProps) => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+        {/* Flexible grid that adapts to number of clients */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {clients.map((client, index) => (
             <motion.a
               key={client.name}
@@ -78,7 +79,7 @@ const ClientShowcase = ({ variant = "home" }: ClientShowcaseProps) => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group block cursor-pointer"
             >
               <div className="relative bg-[hsl(220,20%,12%)] rounded-2xl p-8 lg:p-10 border border-accent/20 transition-all duration-300 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 h-full">
@@ -86,23 +87,17 @@ const ClientShowcase = ({ variant = "home" }: ClientShowcaseProps) => {
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div className="relative flex flex-col items-center text-center">
-                  {/* Logo container with accent border like the reference */}
-                  <div className="relative mb-6">
-                    <div className="w-20 h-20 lg:w-24 lg:h-24 flex items-center justify-center bg-white rounded-xl p-3 border-2 border-accent/30 transition-all duration-300 group-hover:scale-105 group-hover:border-accent/60">
-                      <img
-                        src={client.logo}
-                        alt={`${client.name} logo`}
-                        className="max-h-14 lg:max-h-16 max-w-full object-contain"
-                        loading="lazy"
-                        decoding="async"
-                        width={80}
-                        height={80}
-                      />
-                    </div>
-                    {/* Number badge like reference */}
-                    <span className="absolute -top-2 -right-2 w-7 h-7 flex items-center justify-center bg-accent text-background text-sm font-bold rounded-full shadow-lg">
-                      {index + 1}
-                    </span>
+                  {/* Logo container */}
+                  <div className="w-20 h-20 lg:w-24 lg:h-24 mb-6 flex items-center justify-center bg-white rounded-xl p-3 border-2 border-accent/30 transition-all duration-300 group-hover:scale-105 group-hover:border-accent/60">
+                    <img
+                      src={client.logo}
+                      alt={`${client.name} logo`}
+                      className="max-h-14 lg:max-h-16 max-w-full object-contain"
+                      loading="lazy"
+                      decoding="async"
+                      width={80}
+                      height={80}
+                    />
                   </div>
 
                   {/* Title */}
