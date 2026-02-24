@@ -131,7 +131,7 @@ const Services = () => {
         canonical="https://finstics.com/services"
       />
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-0">
+      <section className="relative min-h-[90vh] flex items-start overflow-hidden pt-32 md:pt-40">
         {/* Animated background elements */}
         <div className="absolute inset-0 bg-background">
           <motion.div 
