@@ -112,23 +112,6 @@ const About = () => {
                 <span className="text-muted-foreground">founders.</span>
               </h1>
 
-              {/* Value proposition card */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="relative max-w-xl mb-10"
-              >
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-accent via-accent/50 to-transparent rounded-full" />
-                <div className="pl-6 py-3">
-                  <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-2">
-                    We started FINSTICS because we saw too many talented founders losing sleep over compliance and finance
-                  </p>
-                  <p className="text-lg md:text-xl text-foreground font-medium">
-                    — things that should not stop them from building.
-                  </p>
-                </div>
-              </motion.div>
 
               {/* Dual CTAs */}
               <motion.div

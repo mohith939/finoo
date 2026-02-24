@@ -175,25 +175,6 @@ const Contact = () => {
               <span className="text-muted-foreground/60">.</span>
             </motion.h1>
             
-            {/* Value proposition card */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.35 }}
-              className="relative max-w-2xl mb-8"
-            >
-              <div className="relative p-5 md:p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-border/50 backdrop-blur-sm">
-                {/* Accent line */}
-                <div className="absolute left-0 top-5 bottom-5 w-1 bg-gradient-to-b from-accent via-accent/60 to-transparent rounded-full" />
-                
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed pl-5">
-                  No commitment. No pressure.
-                  <span className="block mt-2 text-foreground font-semibold text-xl md:text-2xl">
-                    — just a chat to see if we can help.
-                  </span>
-                </p>
-              </div>
-            </motion.div>
             
             {/* CTA Buttons */}
             <motion.div
