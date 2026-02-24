@@ -174,25 +174,6 @@ const Services = () => {
               <span className="text-muted-foreground">No complex packages.</span>
             </motion.h1>
             
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.35 }}
-              className="relative max-w-2xl mb-8"
-            >
-              <div className="relative p-5 md:p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-border/50 backdrop-blur-sm">
-                <div className="absolute left-0 top-5 bottom-5 w-1 bg-gradient-to-b from-accent via-accent/60 to-transparent rounded-full" />
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed pl-5">
-                  We don't believe in overwhelming you with options.
-                  <span className="block mt-2 text-foreground font-semibold text-xl md:text-2xl">
-                    — straightforward and honest.
-                  </span>
-                </p>
-                <p className="text-base md:text-lg text-muted-foreground mt-4 pl-5">
-                  Here's what we can help with.
-                </p>
-              </div>
-            </motion.div>
             
             <motion.div
               initial={{ opacity: 0, y: 30 }}
