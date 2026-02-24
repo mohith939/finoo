@@ -75,12 +75,10 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.15 }}
             className="font-display text-4xl sm:text-5xl lg:text-7xl text-foreground mb-8 leading-[1.1] tracking-tight"
           >
-            <span className="block text-muted-foreground/70 text-2xl sm:text-3xl lg:text-4xl font-normal mb-3 tracking-normal">
-              You focus on
-            </span>
+            <span className="block">Build Your Startup.</span>
             <span className="relative inline-block">
               <span className="relative z-10 bg-gradient-to-r from-accent via-accent to-accent/80 bg-clip-text text-transparent">
-                growth
+                We Handle the Tech and Finance.
               </span>
               <motion.span 
                 initial={{ scaleX: 0 }}
@@ -89,33 +87,7 @@ const HeroSection = () => {
                 className="absolute -bottom-1 md:bottom-0 left-0 right-0 h-1 md:h-1.5 bg-gradient-to-r from-accent to-accent/50 origin-left rounded-full"
               />
             </span>
-            <span className="text-muted-foreground/40">.</span>
-            <br />
-            <span className="text-foreground/90">We handle the rest.</span>
           </motion.h1>
-          
-          {/* Value proposition card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.35 }}
-            className="relative max-w-2xl mb-8"
-          >
-            <div className="relative p-5 md:p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-border/50 backdrop-blur-sm">
-              {/* Accent line */}
-              <div className="absolute left-0 top-5 bottom-5 w-1 bg-gradient-to-b from-accent via-accent/60 to-transparent rounded-full" />
-              
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed pl-5">
-                Finance and compliance can feel overwhelming
-                <span className="block mt-2 text-foreground font-semibold text-xl md:text-2xl">
-                  — it doesn't have to be.
-                </span>
-              </p>
-              <p className="text-base md:text-lg text-muted-foreground mt-4 pl-5">
-                We quietly take care of everything so you can keep building.
-              </p>
-            </div>
-          </motion.div>
           
           {/* CTA Buttons */}
           <motion.div
