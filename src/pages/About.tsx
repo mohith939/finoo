@@ -40,7 +40,7 @@ const About = () => {
         canonical="https://finstics.com/about"
       />
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-0">
+      <section className="relative min-h-[60vh] flex items-start overflow-hidden pt-20 md:pt-24">
         {/* Animated background elements */}
         <div className="absolute inset-0 bg-background">
           {/* Large gradient orb */}
@@ -104,12 +104,10 @@ const About = () => {
               </motion.span>
 
               {/* Headline */}
-              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground mb-8 leading-[1.05] tracking-tight">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 leading-[1.05] tracking-tight">
                 The calm back office
                 <br />
-                <span className="text-accent">for first-time</span>
-                <br />
-                <span className="text-muted-foreground">founders.</span>
+                <span className="text-muted-foreground">for first-time founders.</span>
               </h1>
 
 

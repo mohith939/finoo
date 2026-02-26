@@ -7,7 +7,7 @@ const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-0">
+    <section className="relative min-h-[60vh] flex items-start overflow-hidden pt-20 md:pt-24">
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-background">
         {/* Large gradient orb */}
@@ -73,20 +73,11 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="font-display text-4xl sm:text-5xl lg:text-7xl text-foreground mb-8 leading-[1.1] tracking-tight"
+            className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 leading-[1.05] tracking-tight"
           >
-            <span className="block">Build Your Startup.</span>
-            <span className="relative inline-block">
-              <span className="relative z-10 bg-gradient-to-r from-accent via-accent to-accent/80 bg-clip-text text-transparent">
-                We Handle the Tech and Finance.
-              </span>
-              <motion.span 
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 1 }}
-                className="absolute -bottom-1 md:bottom-0 left-0 right-0 h-1 md:h-1.5 bg-gradient-to-r from-accent to-accent/50 origin-left rounded-full"
-              />
-            </span>
+            Build Your Startup.
+            <br />
+            <span className="text-muted-foreground">We Handle the Tech and Finance.</span>
           </motion.h1>
           
           {/* CTA Buttons */}
