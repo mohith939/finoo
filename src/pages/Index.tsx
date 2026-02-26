@@ -7,6 +7,7 @@ import ServicesPreview from "@/components/home/ServicesPreview";
 import HowItWorks from "@/components/home/HowItWorks";
 import ClientShowcase from "@/components/home/ClientShowcase";
 import TrustSignals from "@/components/home/TrustSignals";
+import ScrollingServices from "@/components/home/ScrollingServices";
 import FinalCTA from "@/components/home/FinalCTA";
 
 const Index = () => {
@@ -24,6 +25,7 @@ const Index = () => {
       <HowItWorks />
       <ClientShowcase variant="home" />
       <TrustSignals />
+      <ScrollingServices />
       <FinalCTA />
     </Layout>
   );
