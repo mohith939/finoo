@@ -77,7 +77,7 @@ const HeroSection = () => {
           >
             Build Your Startup.
             <br />
-            <span className="text-muted-foreground">We Handle the Tech and Finance.</span>
+            <span className="text-accent">We Handle the Tech and Finance.</span>
           </motion.h1>
           
           {/* CTA Buttons */}
