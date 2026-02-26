@@ -20,12 +20,12 @@ const Index = () => {
       />
       <HeroSection />
       
+      <ScrollingServices />
       <WhatWeDo />
       <ServicesPreview />
       <HowItWorks />
       <ClientShowcase variant="home" />
       <TrustSignals />
-      <ScrollingServices />
       <FinalCTA />
     </Layout>
   );
