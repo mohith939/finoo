@@ -75,7 +75,7 @@ const FAQ = () => {
         canonical="https://finstics.com/faq"
       />
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-0">
+      <section className="relative min-h-[60vh] flex items-start overflow-hidden pt-20 md:pt-24">
         {/* Animated background elements */}
         <div className="absolute inset-0 bg-background">
           {/* Large gradient orb */}
@@ -141,16 +141,7 @@ const FAQ = () => {
               transition={{ duration: 0.8, delay: 0.15 }}
               className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 leading-[1.05] tracking-tight"
             >
-              Questions{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10 text-accent">founders</span>
-                <motion.span 
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.6, delay: 1 }}
-                  className="absolute bottom-2 md:bottom-3 left-0 right-0 h-3 md:h-4 bg-accent/20 origin-left -z-0"
-                />
-              </span>
+              Questions founders
               <br />
               <span className="text-muted-foreground">actually ask us.</span>
             </motion.h1>
