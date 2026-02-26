@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import HeroSection from "@/components/home/HeroSection";
-import WhoIsThisFor from "@/components/home/WhoIsThisFor";
+
 import WhatWeDo from "@/components/home/WhatWeDo";
 import ServicesPreview from "@/components/home/ServicesPreview";
 import HowItWorks from "@/components/home/HowItWorks";
@@ -18,7 +18,7 @@ const Index = () => {
         canonical="https://finstics.com/"
       />
       <HeroSection />
-      <WhoIsThisFor />
+      
       <WhatWeDo />
       <ServicesPreview />
       <HowItWorks />
