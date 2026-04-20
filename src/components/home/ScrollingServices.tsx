@@ -1,5 +1,4 @@
-import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import gstImage from "@/assets/service-gst.png";
 import trademarkImage from "@/assets/service-trademark.png";
 import msmeImage from "@/assets/service-msme.png";
@@ -16,48 +15,7 @@ const services = [
   { name: "Import Export Certificate", image: iecImage },
 ];
 
-// Duplicate for seamless loop
-const duplicated = [...services, ...services, ...services];
-
 const ScrollingServices = () => {
-  const x = useMotionValue(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
-  const [trackWidth, setTrackWidth] = useState(0);
-  const speed = 60; // px per second
-
-  useEffect(() => {
-    const measure = () => {
-      if (trackRef.current) {
-        // Single set width = total / 3 (we tripled the array)
-        setTrackWidth(trackRef.current.scrollWidth / 3);
-      }
-    };
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, []);
-
-  useAnimationFrame((_, delta) => {
-    if (isPaused || trackWidth === 0) return;
-    let next = x.get() - (speed * delta) / 1000;
-    if (next <= -trackWidth) next += trackWidth;
-    if (next > 0) next -= trackWidth;
-    x.set(next);
-  });
-
-  // Mouse wheel horizontal scroll
-  const handleWheel = (e: React.WheelEvent) => {
-    const delta = e.deltaY !== 0 ? e.deltaY : e.deltaX;
-    let next = x.get() - delta;
-    if (trackWidth > 0) {
-      if (next <= -trackWidth) next += trackWidth;
-      if (next > 0) next -= trackWidth;
-    }
-    x.set(next);
-  };
-
   return (
     <section className="relative overflow-hidden py-12 lg:py-16">
       <div className="absolute inset-0 bg-gradient-to-br from-[hsl(220,25%,8%)] to-[hsl(220,25%,12%)]" />
@@ -74,47 +32,8 @@ const ScrollingServices = () => {
         </motion.h2>
       </div>
 
-      <div
-        ref={containerRef}
-        className="relative z-10 overflow-hidden cursor-grab active:cursor-grabbing"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-        onWheel={handleWheel}
-      >
-        <motion.div
-          ref={trackRef}
-          className="flex gap-6 w-max"
-          style={{ x }}
-          drag="x"
-          dragConstraints={{ left: -Infinity, right: Infinity }}
-          dragElastic={0}
-          dragMomentum={true}
-          onDragStart={() => setIsPaused(true)}
-          onDragEnd={() => setIsPaused(false)}
-        >
-          {duplicated.map((service, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-72 md:w-80 rounded-2xl overflow-hidden border border-white/10 bg-white backdrop-blur-sm select-none pointer-events-none"
-            >
-              <img
-                src={service.image}
-                alt={service.name}
-                className="w-full h-44 object-contain bg-white"
-                loading="lazy"
-                draggable={false}
-              />
-              <div className="p-4 text-center bg-[hsl(220,25%,10%)]">
-                <h3 className="font-display text-lg text-foreground">{service.name}</h3>
-              </div>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-
-      {/* Grid view for easy scanning */}
-      <div className="container-calm px-6 md:px-12 lg:px-20 relative z-10 mt-12">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="container-calm px-6 md:px-12 lg:px-20 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={service.name}
@@ -122,18 +41,18 @@ const ScrollingServices = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="rounded-xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm hover:border-accent/40 hover:scale-[1.02] transition-all duration-300"
+              className="rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm hover:border-accent/40 hover:scale-[1.02] transition-all duration-300"
             >
-              <div className="bg-white p-2">
+              <div className="bg-white p-4">
                 <img
                   src={service.image}
                   alt={service.name}
-                  className="w-full h-24 object-contain"
+                  className="w-full h-40 object-contain"
                   loading="lazy"
                 />
               </div>
-              <div className="p-3 text-center">
-                <h3 className="font-display text-sm text-foreground leading-tight">{service.name}</h3>
+              <div className="p-4 text-center">
+                <h3 className="font-display text-base lg:text-lg text-foreground leading-tight">{service.name}</h3>
               </div>
             </motion.div>
           ))}
