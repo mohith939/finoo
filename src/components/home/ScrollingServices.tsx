@@ -5,8 +5,10 @@ import trademarkImage from "@/assets/service-trademark.png";
 import msmeImage from "@/assets/service-msme.png";
 import fssaiImage from "@/assets/service-fssai.png";
 import iecImage from "@/assets/service-iec.png";
+import companyImage from "@/assets/service-company.png";
 
 const services = [
+  { name: "Company Registration", image: companyImage },
   { name: "GST Registration & Filings", image: gstImage },
   { name: "Trademark Registration", image: trademarkImage },
   { name: "MSME Registration", image: msmeImage },
