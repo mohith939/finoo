@@ -5,8 +5,10 @@ import trademarkImage from "@/assets/service-trademark.png";
 import msmeImage from "@/assets/service-msme.png";
 import fssaiImage from "@/assets/service-fssai.png";
 import iecImage from "@/assets/service-iec.png";
+import companyImage from "@/assets/service-company.png";
 
 const services = [
+  { name: "Company Registration", image: companyImage },
   { name: "GST Registration & Filings", image: gstImage },
   { name: "Trademark Registration", image: trademarkImage },
   { name: "MSME Registration", image: msmeImage },
@@ -108,6 +110,34 @@ const ScrollingServices = () => {
             </div>
           ))}
         </motion.div>
+      </div>
+
+      {/* Grid view for easy scanning */}
+      <div className="container-calm px-6 md:px-12 lg:px-20 relative z-10 mt-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="rounded-xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm hover:border-accent/40 hover:scale-[1.02] transition-all duration-300"
+            >
+              <div className="bg-white p-2">
+                <img
+                  src={service.image}
+                  alt={service.name}
+                  className="w-full h-24 object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-3 text-center">
+                <h3 className="font-display text-sm text-foreground leading-tight">{service.name}</h3>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
