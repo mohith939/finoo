@@ -12,7 +12,7 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 
 const WHATSAPP_LINK = "https://wa.me/918340956469?text=Hi%20FINSTICS%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.";
-const PHONE_NUMBER = "+91 8340956469";
+const PHONE_NUMBER = "+91 9392633211";
 const EMAIL = "finstics@gmail.com";
 
 const Contact = () => {
