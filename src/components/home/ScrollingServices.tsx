@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
+import gstImage from "@/assets/service-gst.png";
+import trademarkImage from "@/assets/service-trademark.png";
+import msmeImage from "@/assets/service-msme.png";
 
 const services = [
-  { name: "GST Filing", image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop" },
-  { name: "Bookkeeping", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" },
-  { name: "TDS Returns", image: "https://images.unsplash.com/photo-1507679799987-c73b4fef2a9b?w=400&h=250&fit=crop" },
+  { name: "GST Registration & Filings", image: gstImage },
+  { name: "Trademark Registration", image: trademarkImage },
+  { name: "MSME Registration", image: msmeImage },
 ];
 
 // Duplicate for seamless loop
@@ -34,7 +37,7 @@ const ScrollingServices = () => {
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 20,
+              duration: 25,
               ease: "linear",
             },
           }}
@@ -42,15 +45,15 @@ const ScrollingServices = () => {
           {duplicated.map((service, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-72 md:w-80 rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm"
+              className="flex-shrink-0 w-72 md:w-80 rounded-2xl overflow-hidden border border-white/10 bg-white backdrop-blur-sm"
             >
               <img
                 src={service.image}
                 alt={service.name}
-                className="w-full h-44 object-cover"
+                className="w-full h-44 object-contain bg-white"
                 loading="lazy"
               />
-              <div className="p-4 text-center">
+              <div className="p-4 text-center bg-[hsl(220,25%,10%)]">
                 <h3 className="font-display text-lg text-foreground">{service.name}</h3>
               </div>
             </div>
