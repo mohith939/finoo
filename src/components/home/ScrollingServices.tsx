@@ -33,7 +33,7 @@ const ScrollingServices = () => {
       </div>
 
       <div className="container-calm px-6 md:px-12 lg:px-20 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={service.name}
@@ -43,16 +43,16 @@ const ScrollingServices = () => {
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className="rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm hover:border-accent/40 hover:scale-[1.02] transition-all duration-300"
             >
-              <div className="bg-white p-4">
+              <div className="bg-white p-6 flex items-center justify-center">
                 <img
                   src={service.image}
                   alt={service.name}
-                  className="w-full h-40 object-contain"
+                  className="w-full h-64 lg:h-72 object-contain"
                   loading="lazy"
                 />
               </div>
-              <div className="p-4 text-center">
-                <h3 className="font-display text-base lg:text-lg text-foreground leading-tight">{service.name}</h3>
+              <div className="p-5 text-center">
+                <h3 className="font-display text-lg lg:text-xl text-foreground leading-tight">{service.name}</h3>
               </div>
             </motion.div>
           ))}
