@@ -11,14 +11,14 @@ import companyImage from "@/assets/service-company.png";
 const PHONE_TEL = "tel:+919392633211";
 
 const services = [
-  { name: "ITR Filing", image: itrImage },
-  { name: "TDS Filing", image: tdsImage },
   { name: "Company Registration", image: companyImage },
   { name: "GST Registration & Filings", image: gstImage },
   { name: "Trademark Registration", image: trademarkImage },
   { name: "MSME Registration", image: msmeImage },
   { name: "FSSAI Registration", image: fssaiImage },
   { name: "Import Export Certificate", image: iecImage },
+  { name: "ITR Filing", image: itrImage },
+  { name: "TDS Filing", image: tdsImage },
 ];
 
 const ScrollingServices = () => {
@@ -51,11 +51,11 @@ const ScrollingServices = () => {
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className="block rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm hover:border-accent/40 hover:scale-[1.02] transition-all duration-300 cursor-pointer"
             >
-              <div className="bg-white p-2 sm:p-3 flex items-center justify-center">
+              <div className="aspect-[3/2] bg-white overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.name}
-                  className="w-full h-80 sm:h-96 lg:h-[28rem] object-cover"
+                  className="w-full h-full object-contain"
                   loading="lazy"
                 />
               </div>
