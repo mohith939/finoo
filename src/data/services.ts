@@ -1,0 +1,592 @@
+export type ServiceFaq = {
+  question: string
+  answer: string
+}
+
+export type ServiceProcessStep = {
+  title: string
+  description: string
+}
+
+export type Service = {
+  id: string
+  name: string
+  slug: string
+  category: string
+  icon: string
+  accent: string
+  intro: string
+  description: string
+  suitableFor: string[]
+  docs: string[]
+  process: ServiceProcessStep[]
+  benefits: string[]
+  faqs: ServiceFaq[]
+  related: string[]
+  metaTitle: string
+  metaDescription: string
+}
+
+export const services: Service[] = [
+  {
+    id: 'company-registration',
+    name: 'Company Registration',
+    slug: 'company-registration',
+    category: 'Business Registration',
+    icon: 'building',
+    accent: '#1d4ed8',
+    intro: 'Set up your business correctly with the right structure and paperwork from the start.',
+    description:
+      'We help business owners choose the right company structure, prepare the required documents, and guide them through registration in a simple step-by-step way.',
+    suitableFor: ['Startups', 'Founders', 'Small business owners', 'New ventures'],
+    docs: ['Business name ideas', 'Founder identity proof', 'Address proof', 'Business activity details'],
+    process: [
+      { title: 'Tell us your plan', description: 'Share your business idea, business type, and goals.' },
+      { title: 'We check the right path', description: 'We explain the registration structure and what documents are needed.' },
+      { title: 'We prepare and file', description: 'We help complete forms and filing steps with the required support.' },
+      { title: 'You get your setup ready', description: 'We help you move ahead with confidence once registration is in place.' },
+    ],
+    benefits: ['Clear guidance', 'Simple documentation support', 'Better business setup readiness'],
+    faqs: [
+      { question: 'Do I need to register before I start my business?', answer: 'In many cases, yes, legal registration is needed before you begin operations or open a business bank account. We can guide you based on your activity.' },
+      { question: 'Can Finstics help with the initial structure decision?', answer: 'Yes. We help you understand the right setup based on your business model, scale, and compliance needs.' },
+    ],
+    related: ['startup-company-registration', 'gst-registration-filings', 'accounting-tax-services'],
+    metaTitle: 'Company Registration Services | Finstics',
+    metaDescription: 'Get guidance for company registration, business setup, and start-up documentation support with Finstics.',
+  },
+  {
+    id: 'startup-company-registration',
+    name: 'Startup / Company Registration',
+    slug: 'startup-company-registration',
+    category: 'Business Registration',
+    icon: 'sparkles',
+    accent: '#0891b2',
+    intro: 'A simple, guided process for founders who want to start the right way.',
+    description:
+      'This service is designed for founders and small business owners who want clear assistance with structure, documentation, and registration steps without confusion.',
+    suitableFor: ['Founders', 'Early-stage teams', 'Business launch plans', 'New companies'],
+    docs: ['Founder details', 'Address proof', 'Business model summary', 'Proposed business name'],
+    process: [
+      { title: 'Understand your needs', description: 'We learn about your business idea and the setup you want.' },
+      { title: 'Choose the right path', description: 'We explain the available company formation options with clarity.' },
+      { title: 'Document preparation', description: 'We help collect and organize the information needed for filing.' },
+      { title: 'Move forward', description: 'You get the support needed to proceed confidently with setup work.' },
+    ],
+    benefits: ['Founders-first support', 'Clear steps', 'Practical help with documentation'],
+    faqs: [
+      { question: 'Can I register my company if I am starting alone?', answer: 'Yes. We can help you understand the most suitable structure based on your business and future plans.' },
+      { question: 'Do I need a business plan to get started?', answer: 'Not always, but having a basic idea of your work, ownership, and growth plan makes the process smoother.' },
+    ],
+    related: ['company-registration', 'msme-udyam-registration', 'website-design-development'],
+    metaTitle: 'Startup Registration Support | Finstics',
+    metaDescription: 'Startup and company registration guidance designed to help founders begin with confidence and clarity.',
+  },
+  {
+    id: 'gst-registration-filings',
+    name: 'GST Registration & Filings',
+    slug: 'gst-registration-filings',
+    category: 'Tax & Compliance',
+    icon: 'fileMoney',
+    accent: '#10b981',
+    intro: 'Stay compliant with tax registrations and filings without missing the basics.',
+    description:
+      'From registration to regular filing support, we help businesses understand what is needed and keep the process manageable.',
+    suitableFor: ['Traders', 'Manufacturers', 'Service businesses', 'Growing companies'],
+    docs: ['Business details', 'Owner documents', 'Bank account information', 'Address proof'],
+    process: [
+      { title: 'Check your eligibility', description: 'We understand your turnover, business type, and compliance needs.' },
+      { title: 'Prepare application', description: 'We help collect and review the required information.' },
+      { title: 'File and keep records', description: 'We guide you through filing and maintain a clear checklist.' },
+      { title: 'Stay compliant', description: 'We help you keep track of the next steps and timelines.' },
+    ],
+    benefits: ['Support for regular compliance', 'Simple instructions', 'Less confusion for business owners'],
+    faqs: [
+      { question: 'Do all businesses need GST registration?', answer: 'Not all businesses need the same registration path, and the requirement depends on the business activity and turnover. We can guide you based on your case.' },
+      { question: 'Can I get help with filing after registration?', answer: 'Yes. We can help you understand filing dates and the basic documents usually needed.' },
+    ],
+    related: ['accounting-tax-services', 'trade-business-license', 'company-registration'],
+    metaTitle: 'GST Registration & Filing Support | Finstics',
+    metaDescription: 'Support for GST registration, filing guidance, and basic compliance help for small businesses and growing companies.',
+  },
+  {
+    id: 'msme-udyam-registration',
+    name: 'MSME / Udyam Registration',
+    slug: 'msme-udyam-registration',
+    category: 'Business Registration',
+    icon: 'briefcase',
+    accent: '#7c3aed',
+    intro: 'Support for small businesses that want to formalize their setup and access benefits.',
+    description:
+      'We help small businesses prepare for registration and simplify the process with clear support and documentation guidance.',
+    suitableFor: ['Small businesses', 'Manufacturers', 'Traders', 'Service businesses'],
+    docs: ['Business details', 'Owner information', 'Business activity summary', 'Address proof'],
+    process: [
+      { title: 'Understand your business profile', description: 'We review the business structure and registration need.' },
+      { title: 'Prepare the application', description: 'We help organize the details and required documents.' },
+      { title: 'Submit and follow up', description: 'We stay with you through the filing and follow-up steps.' },
+      { title: 'Keep you ready for growth', description: 'You receive the support needed to move ahead with confidence.' },
+    ],
+    benefits: ['Simple onboarding', 'Useful business formalization support', 'Better record readiness'],
+    faqs: [
+      { question: 'Why is MSME registration useful?', answer: 'It helps businesses formalize their setup and may support easier access to government and business-related opportunities depending on the scheme and requirement.' },
+      { question: 'Is the process difficult?', answer: 'We keep it simple by explaining each step clearly and helping with the required information in one place.' },
+    ],
+    related: ['company-registration', 'gst-registration-filings', 'trade-business-license'],
+    metaTitle: 'MSME Registration Support | Finstics',
+    metaDescription: 'Easy MSME or Udyam registration guidance to help small businesses formalize and grow with confidence.',
+  },
+  {
+    id: 'trade-business-license',
+    name: 'Trade / Business License',
+    slug: 'trade-business-license',
+    category: 'Licenses & Registrations',
+    icon: 'clipboard',
+    accent: '#f59e0b',
+    intro: 'Get the right local and trade-related approval support for your business activity.',
+    description:
+      'Whether you are running a shop, trade unit, or service business, we help you understand what approvals or registrations may apply before you move forward.',
+    suitableFor: ['Retailers', 'Traders', 'Small businesses', 'Service providers'],
+    docs: ['Business name', 'Owner details', 'Activity details', 'Address and setup information'],
+    process: [
+      { title: 'Assess the requirement', description: 'We understand the business activity and local compliance needs.' },
+      { title: 'Collect information', description: 'We help create a clear checklist of required documents.' },
+      { title: 'Submit the application', description: 'We guide the filing and submission steps in a simple way.' },
+      { title: 'Stay updated', description: 'We help you understand the next steps and keep things moving.' },
+    ],
+    benefits: ['Business-ready support', 'Clear compliance guidance', 'Less confusion for local businesses'],
+    faqs: [
+      { question: 'Do I need a trade license for all business activities?', answer: 'Not always. The exact requirement depends on the type of business, location, and operating model. We can help you understand what applies.' },
+      { question: 'Can Finstics guide me if I am unsure of the requirement?', answer: 'Yes. We usually begin by understanding your business and the local compliance needs before suggesting the right path.' },
+    ],
+    related: ['company-registration', 'labour-license', 'gst-registration-filings'],
+    metaTitle: 'Trade License Guidance | Finstics',
+    metaDescription: 'Simple trade and business license support for shop owners, traders, and service businesses.',
+  },
+  {
+    id: 'certificates-documentation',
+    name: 'Certificates & Documentation',
+    slug: 'certificates-documentation',
+    category: 'Licenses & Registrations',
+    icon: 'fileText',
+    accent: '#14b8a6',
+    intro: 'Get the right documents, certificates, and support prepared in a clean and organized way.',
+    description:
+      'We support business owners who need document preparation, verification, and certificate-related guidance for smoother operations and business setup.',
+    suitableFor: ['Importers', 'Exporters', 'Food businesses', 'Manufacturers', 'Service businesses'],
+    docs: ['Business information', 'Identity and address proof', 'Supporting records', 'Application details'],
+    process: [
+      { title: 'Review the requirement', description: 'We understand which certificate or document is needed.' },
+      { title: 'Prepare the checklist', description: 'We organize the required information and paperwork in a simple format.' },
+      { title: 'Support the filing', description: 'We help ensure your data and documents are ready for submission.' },
+      { title: 'Move ahead confidently', description: 'You receive a smoother process with less confusion and follow-up work.' },
+    ],
+    benefits: ['Well-organized documentation', 'Less back-and-forth', 'Clear support for business paperwork'],
+    faqs: [
+      { question: 'What types of documents do you help with?', answer: 'This can include registrations, certificate applications, supporting documentation, and business paperwork based on the requirement.' },
+      { question: 'Is this only for big businesses?', answer: 'No. Small businesses, traders, and new founders often need the same kind of documentation support.' },
+    ],
+    related: ['fssai-registration', 'iec-import-export', 'company-registration'],
+    metaTitle: 'Certificates & Documentation Support | Finstics',
+    metaDescription: 'Get help with business certificates, documentation, and supporting paperwork for your business setup and compliance needs.',
+  },
+  {
+    id: 'website-design-development',
+    name: 'Website Design & Development',
+    slug: 'website-design-development',
+    category: 'Website & Digital Solutions',
+    icon: 'monitor',
+    accent: '#3b82f6',
+    intro: 'Professional websites that help businesses look credible, attract enquiries, and explain services clearly.',
+    description:
+      'We create simple, modern business websites that help users understand your services, contact you easily, and trust your brand from the first visit.',
+    suitableFor: ['Small businesses', 'Service providers', 'Startups', 'Growing companies'],
+    docs: ['Business information', 'Brand references', 'Service list', 'Contact details'],
+    process: [
+      { title: 'Discuss your goal', description: 'We understand how you want your website to help your business.' },
+      { title: 'Plan the website', description: 'We align the structure, content, and user journey around your needs.' },
+      { title: 'Build and refine', description: 'We design a professional and mobile-friendly website experience.' },
+      { title: 'Launch with confidence', description: 'You get a website ready for enquiries and business growth.' },
+    ],
+    benefits: ['Professional online presence', 'Clear service presentation', 'Easier customer inquiries'],
+    faqs: [
+      { question: 'Do I need a website if I already use WhatsApp?', answer: 'A website makes your business look more credible and helps customers understand your offerings even before they contact you.' },
+      { question: 'Can the site be mobile-friendly?', answer: 'Yes. We design for a better experience across mobile, tablet, and desktop devices.' },
+    ],
+    related: ['company-registration', 'contact-us', 'accounting-tax-services'],
+    metaTitle: 'Website Design & Development | Finstics',
+    metaDescription: 'Professional website design and development for small businesses, startups, and service providers.',
+  },
+  {
+    id: 'accounting-tax-services',
+    name: 'Accounting / Tax Services',
+    slug: 'accounting-tax-services',
+    category: 'Accounting & Financial Services',
+    icon: 'ledger',
+    accent: '#2563eb',
+    intro: 'Support for clearer books, calmer operations, and better tax readiness.',
+    description:
+      'We help businesses keep their accounting records organized and understand the basic tax recordkeeping and reporting process.',
+    suitableFor: ['Small businesses', 'Manufacturers', 'Traders', 'Service firms'],
+    docs: ['Business transactions', 'Bank statements', 'Expense records', 'Basic financial documents'],
+    process: [
+      { title: 'Understand the current setup', description: 'We review how records are maintained and what needs support.' },
+      { title: 'Organize the basics', description: 'We help set up simple accounting and documentation routines.' },
+      { title: 'Support reporting', description: 'We guide basic tax and financial readiness with a simple approach.' },
+      { title: 'Keep things moving', description: 'You get more clarity and fewer surprises in day-to-day operations.' },
+    ],
+    benefits: ['Clearer books', 'Better tax readiness', 'Improved business discipline'],
+    faqs: [
+      { question: 'Do I need accounting support even if my business is small?', answer: 'Small businesses benefit from clear records because it makes compliance and decision-making much easier over time.' },
+      { question: 'Can you help with records and simple tax guidance?', answer: 'Yes. We support basic financial organization and practical guidance around tax-related recordkeeping.' },
+    ],
+    related: ['gst-registration-filings', 'company-registration', 'website-design-development'],
+    metaTitle: 'Accounting & Tax Support | Finstics',
+    metaDescription: 'Accounting and tax support for small businesses, traders, and growing companies seeking simpler financial processes.',
+  },
+  {
+    id: 'fssai-registration',
+    name: 'FSSAI Registration',
+    slug: 'fssai-registration',
+    category: 'Licenses & Registrations',
+    icon: 'badge',
+    accent: '#ec4899',
+    intro: 'Support for food businesses that need their basic food license setup in place.',
+    description:
+      'We help food businesses understand the documentation and registration process so they can operate with greater clarity and confidence.',
+    suitableFor: ['Food businesses', 'Restaurants', 'Packaged food sellers', 'Food traders'],
+    docs: ['Business details', 'Food category details', 'Address information', 'Owner documents'],
+    process: [
+      { title: 'Understand your food business', description: 'We review your business type and the supporting requirements.' },
+      { title: 'Prepare required details', description: 'We help organize the information needed for registration.' },
+      { title: 'Submit and track', description: 'We guide the application and follow-up process in a simple way.' },
+      { title: 'Stay ready to operate', description: 'You get the support needed to move ahead without confusion.' },
+    ],
+    benefits: ['Clear food-business guidance', 'Document support', 'Simpler process for owners'],
+    faqs: [
+      { question: 'Who needs FSSAI registration?', answer: 'Food businesses and related operators often need to review their registration requirement based on their business activity and scale.' },
+      { question: 'Can Finstics help if I am unsure?', answer: 'Yes. We can help review the basics and understand what type of registration path may be relevant.' },
+    ],
+    related: ['trade-business-license', 'certificates-documentation', 'haccp-certification'],
+    metaTitle: 'FSSAI Registration Support | Finstics',
+    metaDescription: 'Food license and FSSAI registration support for food businesses that need documentation and process guidance.',
+  },
+  {
+    id: 'labour-license',
+    name: 'Labour License',
+    slug: 'labour-license',
+    category: 'Licenses & Registrations',
+    icon: 'users',
+    accent: '#f97316',
+    intro: 'Simple guidance for businesses that need to stay organized around workforce-related compliance.',
+    description:
+      'We help businesses understand what workforce-related paperwork may be needed and how to approach the process in a practical way.',
+    suitableFor: ['Contractors', 'Factories', 'Service businesses', 'Growing teams'],
+    docs: ['Business activity details', 'Workforce information', 'Address details', 'Owner and establishment information'],
+    process: [
+      { title: 'Review your business activity', description: 'We understand the workforce structure and requirements involved.' },
+      { title: 'Collect basic information', description: 'We prepare a simple checklist of what is typically needed.' },
+      { title: 'Apply with support', description: 'We guide the submission and documentation process in a clear way.' },
+      { title: 'Move forward', description: 'You receive practical help with a smoother compliance journey.' },
+    ],
+    benefits: ['Clear process guidance', 'Reduced confusion', 'Better readiness for workforce compliance'],
+    faqs: [
+      { question: 'Who typically needs a labour license?', answer: 'The requirement depends on the type of business, workforce setup, and the relevant local rules. We can help review the basics.' },
+      { question: 'Can I get help if I do not know the rule?', answer: 'Yes. We start with your business profile and help explain the likely requirement before you proceed.' },
+    ],
+    related: ['trade-business-license', 'company-registration', 'certificates-documentation'],
+    metaTitle: 'Labour License Guidance | Finstics',
+    metaDescription: 'Support for labour license guidance and workforce-related documentation for businesses needing clarity.',
+  },
+  {
+    id: 'iso-certification',
+    name: 'ISO Certification',
+    slug: 'iso-certification',
+    category: 'Certifications',
+    icon: 'award',
+    accent: '#0ea5e9',
+    intro: 'Support for businesses that want to build stronger systems and trust with quality standards.',
+    description:
+      'We help businesses understand the certification process in a simple, structured way so they can move ahead with better clarity and confidence.',
+    suitableFor: ['Manufacturers', 'Service businesses', 'Exporters', 'Growing companies'],
+    docs: ['Business profile', 'Process details', 'Quality goals', 'Operational information'],
+    process: [
+      { title: 'Understand your goal', description: 'We review what kind of certification or quality focus you are aiming for.' },
+      { title: 'Prepare a practical checklist', description: 'We help assess the information and systems involved.' },
+      { title: 'Guide the process', description: 'We support you through the steps in a manageable way.' },
+      { title: 'Build credibility', description: 'You gain a more structured path toward better business trust and quality orientation.' },
+    ],
+    benefits: ['Structured approach', 'Clarity around quality systems', 'Better business trust'],
+    faqs: [
+      { question: 'Do I need ISO certification for every business?', answer: 'No. It depends on business goals, customer needs, and the standards relevant to your operation.' },
+      { question: 'Can Finstics help before I decide?', answer: 'Yes. We can help explain the basics and the kind of information you would usually need to prepare.' },
+    ],
+    related: ['gmp-certification', 'haccp-certification', 'bis-certification'],
+    metaTitle: 'ISO Certification Guidance | Finstics',
+    metaDescription: 'Simple guidance for ISO certification planning, documentation, and process understanding for business owners.',
+  },
+  {
+    id: 'pollution-certificate',
+    name: 'Pollution Certificate',
+    slug: 'pollution-certificate',
+    category: 'Certifications',
+    icon: 'factory',
+    accent: '#84cc16',
+    intro: 'Support for businesses that need to understand environmental and operational documentation requirements.',
+    description:
+      'We help businesses review environmental compliance needs and prepare the right documents in a clear, simple way.',
+    suitableFor: ['Factories', 'Production units', 'Industrial setups', 'Processing businesses'],
+    docs: ['Business details', 'Operational profile', 'Location and activity information', 'Supporting records'],
+    process: [
+      { title: 'Assess the process', description: 'We understand your business model and activity profile.' },
+      { title: 'Review documentation needs', description: 'We prepare a clear checklist and explain the basics.' },
+      { title: 'Support your filing steps', description: 'We help you stay organized during the application process.' },
+      { title: 'Move ahead responsibly', description: 'You get practical support with less uncertainty.' },
+    ],
+    benefits: ['Clear process guidance', 'Simple documentation support', 'Reduced confusion around compliance'],
+    faqs: [
+      { question: 'Who usually needs pollution-related approvals?', answer: 'The requirement often depends on the scale and nature of operations. We can help you understand your likely path based on your setup.' },
+      { question: 'Can Finstics assist with the basics?', answer: 'Yes. We help you review the information and understand the documentation expectations before you move ahead.' },
+    ],
+    related: ['trade-business-license', 'factory-license', 'certificates-documentation'],
+    metaTitle: 'Pollution Certificate Support | Finstics',
+    metaDescription: 'Guidance for pollution-related approvals and certificate support for environmental compliance needs.',
+  },
+  {
+    id: 'trademark-registration',
+    name: 'Trademark Registration',
+    slug: 'trademark-registration',
+    category: 'Trademark & Intellectual Property',
+    icon: 'trademark',
+    accent: '#a855f7',
+    intro: 'Protect the identity of your brand with a clearer trademark process.',
+    description:
+      'We help businesses understand the basics of trademark registration and support the process with better documentation and planning.',
+    suitableFor: ['Brands', 'Business founders', 'Startups', 'Product-focused companies'],
+    docs: ['Brand name', 'Logo or mark details', 'Business owner details', 'Usage information'],
+    process: [
+      { title: 'Check your brand name', description: 'We understand the mark and how you want to protect it.' },
+      { title: 'Prepare the application', description: 'We help organize the details and documents needed for filing.' },
+      { title: 'Guide submission steps', description: 'We support you through the application process with clarity.' },
+      { title: 'Build brand protection', description: 'You get a more confident foundation for protecting your business identity.' },
+    ],
+    benefits: ['Protect your brand', 'Clear support for IP planning', 'Simpler process for founders'],
+    faqs: [
+      { question: 'Do I need trademark registration for a business name?', answer: 'Many businesses consider it important for protecting a brand identity. The exact need depends on the business and your future plans.' },
+      { question: 'Can I register my logo too?', answer: 'Yes. We can help you understand the mark type and the information usually needed for filing.' },
+    ],
+    related: ['company-registration', 'website-design-development', 'certificates-documentation'],
+    metaTitle: 'Trademark Registration Support | Finstics',
+    metaDescription: 'Trademark registration guidance to help businesses protect their brand identity and create stronger brand foundations.',
+  },
+  {
+    id: 'haccp-certification',
+    name: 'HACCP',
+    slug: 'haccp-certification',
+    category: 'Certifications',
+    icon: 'shield',
+    accent: '#22c55e',
+    intro: 'A practical approach for businesses focused on safer food handling and quality systems.',
+    description:
+      'We help food-related businesses understand the documentation and approach behind quality systems that support safer operations and better buyer confidence.',
+    suitableFor: ['Food manufacturers', 'Processing units', 'Food businesses', 'Export-focused food companies'],
+    docs: ['Business details', 'Process information', 'Safety procedures', 'Operational records'],
+    process: [
+      { title: 'Review your operation', description: 'We understand the risk points and areas of focus in your business.' },
+      { title: 'Prepare your plan', description: 'We help map the relevant information and support materials.' },
+      { title: 'Support the process', description: 'We guide you through the documentation and preparation steps.' },
+      { title: 'Build better confidence', description: 'You gain a clearer path toward safer and more trusted operations.' },
+    ],
+    benefits: ['Safer operations', 'Clearer planning', 'Better buyer trust'],
+    faqs: [
+      { question: 'Why is HACCP important?', answer: 'It helps businesses focus on food safety and risk control, which is important for quality and trust.' },
+      { question: 'Is this only for large food units?', answer: 'Not always. Businesses with food handling or processing needs often review whether this standard is relevant to them.' },
+    ],
+    related: ['fssai-registration', 'gmp-certification', 'iso-certification'],
+    metaTitle: 'HACCP Guidance | Finstics',
+    metaDescription: 'HACCP support and quality-system guidance for food businesses that want a clearer safety and compliance path.',
+  },
+  {
+    id: 'gmp-certification',
+    name: 'GMP',
+    slug: 'gmp-certification',
+    category: 'Certifications',
+    icon: 'checkCircle',
+    accent: '#10b981',
+    intro: 'Support for businesses that want better quality systems and clearer operational discipline.',
+    description:
+      'We help businesses understand the basics of GMP-related quality systems and how to prepare their operations for a smoother process.',
+    suitableFor: ['Manufacturers', 'Food producers', 'Process businesses', 'Quality-focused operations'],
+    docs: ['Business profile', 'Process details', 'Quality documentation', 'Operational records'],
+    process: [
+      { title: 'Understand your setup', description: 'We review your process and operational focus.' },
+      { title: 'Prepare the groundwork', description: 'We help organize the information that matters for a quality-focused process.' },
+      { title: 'Support the next stage', description: 'We guide you through the requirements in a practical way.' },
+      { title: 'Continue with confidence', description: 'You have a clearer and more organized path to improved quality systems.' },
+    ],
+    benefits: ['Better process discipline', 'Clear guidance', 'Stronger operational trust'],
+    faqs: [
+      { question: 'What is GMP usually used for?', answer: 'It is commonly associated with quality and process standardization in manufacturing and related operations.' },
+      { question: 'Do I need to know everything before starting?', answer: 'No. We can help you understand the practical steps and the information you would usually need to prepare.' },
+    ],
+    related: ['iso-certification', 'haccp-certification', 'bis-certification'],
+    metaTitle: 'GMP Guidance | Finstics',
+    metaDescription: 'GMP guidance and quality-system support for businesses focused on better process discipline and compliance readiness.',
+  },
+  {
+    id: 'bis-certification',
+    name: 'BIS Certification',
+    slug: 'bis-certification',
+    category: 'Certifications',
+    icon: 'shieldCheck',
+    accent: '#1d4ed8',
+    intro: 'Support for businesses that need a clearer understanding of certification-related requirements.',
+    description:
+      'We help businesses understand the general documentation and preparation requirements behind quality certification pathways.',
+    suitableFor: ['Manufacturers', 'Product-based businesses', 'Exporters', 'Quality-focused brands'],
+    docs: ['Business details', 'Product details', 'Operational information', 'Compliance checklist'],
+    process: [
+      { title: 'Understand your product or business', description: 'We review the type of certification path involved.' },
+      { title: 'Prepare documentation', description: 'We help organize the details commonly required for such processes.' },
+      { title: 'Guide the filing journey', description: 'We support the next steps and keep the process clear and manageable.' },
+      { title: 'Move forward confidently', description: 'You gain a practical, simplified path with fewer surprises.' },
+    ],
+    benefits: ['Clear checklist support', 'Greater documentation readiness', 'Simplified onboarding'],
+    faqs: [
+      { question: 'Who usually needs BIS-related support?', answer: 'Businesses with product and quality requirements often review whether such certification is relevant to them.' },
+      { question: 'Can I get help if I am unsure?', answer: 'Yes. We can help you review your business and the likely documentation and process needed.' },
+    ],
+    related: ['iso-certification', 'gmp-certification', 'trade-business-license'],
+    metaTitle: 'BIS Certification Support | Finstics',
+    metaDescription: 'Practical support for BIS-related certification planning, documentation, and business readiness guidance.',
+  },
+  {
+    id: 'apeda-registration',
+    name: 'APEDA Services',
+    slug: 'apeda-registration',
+    category: 'Import & Export',
+    icon: 'leaf',
+    accent: '#16a34a',
+    intro: 'Guidance for export-focused businesses and agricultural product suppliers.',
+    description:
+      'We help businesses understand the documentation and process needed for export-related registration and compliance work in a simple, manageable way.',
+    suitableFor: ['Exporters', 'Agricultural product businesses', 'Food exporters', 'Trade businesses'],
+    docs: ['Business details', 'Product category', 'Export profile', 'Supporting records'],
+    process: [
+      { title: 'Understand your export profile', description: 'We review what you export and what requirements may apply.' },
+      { title: 'Prepare your documentation', description: 'We help build a clear checklist and gather the main information needed.' },
+      { title: 'Support application steps', description: 'We guide the process and help you stay organized.' },
+      { title: 'Move ahead', description: 'You gain a more clear path toward export readiness and compliance.' },
+    ],
+    benefits: ['Clear export guidance', 'Better documentation readiness', 'Simplified next steps'],
+    faqs: [
+      { question: 'Who usually needs APEDA-related support?', answer: 'Businesses exporting specific agricultural or food-related products often review registration and compliance needs in this area.' },
+      { question: 'Can Finstics help me understand the process?', answer: 'Yes. We help explain the likely requirements and the kind of information typically needed.' },
+    ],
+    related: ['iec-import-export', 'spice-board-services', 'fssai-registration'],
+    metaTitle: 'APEDA Services | Finstics',
+    metaDescription: 'APEDA-related export support and documentation guidance for agricultural and food-focused export businesses.',
+  },
+  {
+    id: 'spice-board-services',
+    name: 'Spice Board Services',
+    slug: 'spice-board-services',
+    category: 'Import & Export',
+    icon: 'pepper',
+    accent: '#dc2626',
+    intro: 'Support for spice and food-export businesses that need clearer compliance guidance.',
+    description:
+      'We help spice-related exporters understand their operational and registration needs and the basic process involved in working with export compliance requirements.',
+    suitableFor: ['Spice exporters', 'Food traders', 'Export businesses', 'Producers'],
+    docs: ['Business details', 'Product category', 'Export profile', 'Identity and address proof'],
+    process: [
+      { title: 'Review your business profile', description: 'We understand the export activity and product type involved.' },
+      { title: 'Prepare your checklist', description: 'We organize the basic documents and registration-related details.' },
+      { title: 'Support the filing path', description: 'We guide you through the main steps in a practical way.' },
+      { title: 'Stay confident', description: 'You get better clarity for the next steps in the export journey.' },
+    ],
+    benefits: ['Clear guidance', 'Better readiness for export paperwork', 'Structured support'],
+    faqs: [
+      { question: 'Who usually needs Spice Board support?', answer: 'Spice exporters and businesses involved in related export activity often review this service based on their product category and compliance needs.' },
+      { question: 'Can you explain this in simple terms?', answer: 'Yes. We simplify the process and explain the likely documentation and steps in clear language.' },
+    ],
+    related: ['apeda-registration', 'iec-import-export', 'fssai-registration'],
+    metaTitle: 'Spice Board Services | Finstics',
+    metaDescription: 'Spice Board guidance and export support for businesses working with spice and food export compliance needs.',
+  },
+  {
+    id: 'legal-metrology-registration',
+    name: 'Legal Metrology / Weights & Measures',
+    slug: 'legal-metrology-registration',
+    category: 'Licenses & Registrations',
+    icon: 'scale',
+    accent: '#7c3aed',
+    intro: 'Clear support for businesses that need legal metrology documentation and regulation guidance.',
+    description:
+      'We help businesses understand the basic compliance and documentation needs that may apply to weighing, measuring, and trade-related operations.',
+    suitableFor: ['Retailers', 'Manufacturers', 'Trade businesses', 'Product-based operations'],
+    docs: ['Business details', 'Trade detail summary', 'Address info', 'Operational information'],
+    process: [
+      { title: 'Understand your activity', description: 'We review how your business works and what type of measurement-related compliance may apply.' },
+      { title: 'Prepare the requirement checklist', description: 'We organize the likely paperwork and information you will need.' },
+      { title: 'Support the filing path', description: 'We help you move forward with greater simplicity and clarity.' },
+      { title: 'Stay compliant', description: 'You get better readiness and less confusion around process steps.' },
+    ],
+    benefits: ['Clearer compliance guidance', 'Simple documentation support', 'Less uncertainty'],
+    faqs: [
+      { question: 'Who needs this service?', answer: 'Businesses working with trade, measurements, or packaging often review whether they need this kind of compliance support.' },
+      { question: 'Can I get a plain-English explanation?', answer: 'Yes. We explain the process in simple terms and help you understand the steps without unnecessary jargon.' },
+    ],
+    related: ['certificates-documentation', 'trade-business-license', 'company-registration'],
+    metaTitle: 'Legal Metrology Support | Finstics',
+    metaDescription: 'Legal metrology and weights and measures guidance for businesses seeking simpler compliance and documentation support.',
+  },
+  {
+    id: 'iec-import-export',
+    name: 'IEC / Import-Export Services',
+    slug: 'iec-import-export',
+    category: 'Import & Export',
+    icon: 'ship',
+    accent: '#0284c7',
+    intro: 'A clearer, easier way to understand import-export work and the support needed before trading internationally.',
+    description:
+      'We help importers and exporters understand the documentation and process involved, so they can move forward with better clarity and fewer surprises.',
+    suitableFor: ['Importers', 'Exporters', 'Trading firms', 'Growing businesses'],
+    docs: ['Business details', 'Owner identity proof', 'Address information', 'Trade activity summary'],
+    process: [
+      { title: 'Understand your trade activity', description: 'We review your import or export goals and business profile.' },
+      { title: 'Organize the checklist', description: 'We help identify the information and documents typically needed.' },
+      { title: 'Guide the process', description: 'We support you through the application and documentation journey.' },
+      { title: 'Move ahead', description: 'You get clarity and a smoother path to trade readiness.' },
+    ],
+    benefits: ['Clear export/import support', 'Less confusion', 'Simple process guidance'],
+    faqs: [
+      { question: 'Do I need IEC for all import-export work?', answer: 'The need depends on the nature of the trade and the setup. We can help you understand the likely requirements relevant to your business.' },
+      { question: 'Can Finstics help if I am new to import-export?', answer: 'Yes. We explain the basic requirements and the main documents and steps in a simple way.' },
+    ],
+    related: ['apeda-registration', 'spice-board-services', 'certificates-documentation'],
+    metaTitle: 'IEC & Import-Export Support | Finstics',
+    metaDescription: 'Simple IEC and import-export support for traders and businesses entering international trade with confidence.',
+  },
+]
+
+export const serviceCategories = [
+  'All Services',
+  'Business Registration',
+  'Tax & Compliance',
+  'Licenses & Registrations',
+  'Certifications',
+  'Import & Export',
+  'Trademark & Intellectual Property',
+  'Website & Digital Solutions',
+  'Accounting & Financial Services',
+]
+
+export const allFAQs = [
+  { question: 'What kind of help does Finstics provide?', answer: 'Finstics helps businesses with registrations, certificates, basic compliance work, and website setup in one place.' },
+  { question: 'Do I need to know the exact service before contacting you?', answer: 'No. You can simply tell us what your business is doing and we can guide you on the next steps.' },
+  { question: 'Can I contact Finstics on WhatsApp?', answer: 'Yes. We keep WhatsApp and phone support highly visible so it is easy to start a conversation.' },
+  { question: 'Is this website only for registration services?', answer: 'No. Finstics supports business setup, compliance, certifications, and website needs for growing businesses.' },
+  { question: 'Can small businesses use this service?', answer: 'Yes. The website is designed to help small businesses, startups, traders, and growing companies in a simple way.' },
+  { question: 'How do I know which service I need?', answer: 'You can browse the service categories, use the search option, or contact us directly for guidance.' },
+]
