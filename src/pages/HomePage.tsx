@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, FileText, Phone, ShieldCheck } from 'lucide-react'
+import { ArrowRight, BriefcaseBusiness, Building2, CheckCircle2, Factory, FileText, Globe2, MonitorSmartphone, Phone, Rocket, ShoppingBag, ShieldCheck, Sparkles, Store, TrendingUp, Utensils } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { ServiceCard } from '../components/ServiceCard'
 import { WhatsAppIcon } from '../components/WhatsAppIcon'
@@ -48,12 +48,18 @@ const processSteps = [
   { title: 'Get Your Service', text: 'Complete the process with confidence.' },
 ]
 
-const audienceList = ['Startups', 'Small Businesses', 'Traders', 'Manufacturers', 'Food Businesses', 'Importers / Exporters', 'Service Businesses', 'Growing Companies']
-
-const trustCards = [
-  { title: 'Business-first approach', text: 'Clear guidance that keeps the everyday business owner in mind.' },
-  { title: 'Easy communication', text: 'WhatsApp and call support make the first step easier.' },
-  { title: 'Editable placeholders', text: 'Brand and contact details can be updated as your information is confirmed.' },
+const audienceList = [
+  { label: 'Startups', icon: Rocket },
+  { label: 'Small Businesses', icon: Building2 },
+  { label: 'Traders', icon: ShoppingBag },
+  { label: 'Manufacturers', icon: Factory },
+  { label: 'Food Businesses', icon: Utensils },
+  { label: 'Importers / Exporters', icon: Globe2 },
+  { label: 'Service Businesses', icon: BriefcaseBusiness },
+  { label: 'Growing Companies', icon: TrendingUp },
+  { label: 'E-commerce Brands', icon: Store },
+  { label: 'Consultants', icon: BriefcaseBusiness },
+  { label: 'Local Shops', icon: Store },
 ]
 
 export function HomePage() {
@@ -85,6 +91,10 @@ export function HomePage() {
                 <ShieldCheck size={22} />
                 <span>Business setup</span>
               </div>
+              <div className="floating-card card-four">
+                <MonitorSmartphone size={22} />
+                <span>Tech</span>
+              </div>
               <div className="floating-card card-two">
                 <FileText size={22} />
                 <span>Compliance</span>
@@ -92,6 +102,10 @@ export function HomePage() {
               <div className="floating-card card-three">
                 <CheckCircle2 size={22} />
                 <span>Certificates</span>
+              </div>
+              <div className="floating-card card-five">
+                <Sparkles size={22} />
+                <span>Marketing</span>
               </div>
               <div className="hero-orb orb-one" />
               <div className="hero-orb orb-two" />
@@ -227,34 +241,17 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section-block">
+      <section className="section-block audience-section">
         <div className="container">
           <div className="section-header centered">
             <span className="eyebrow eyebrow-line">Who we help</span>
           </div>
           <div className="audience-list">
-            {audienceList.map((item) => (
-              <span key={item} className="audience-pill">{item}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-block soft-bg">
-        <div className="container">
-          <div className="section-header centered">
-            <span className="eyebrow eyebrow-line">Trust & proof</span>
-            <h2>Clear support you can rely on</h2>
-          </div>
-          <div className="trust-grid">
-            {trustCards.map((card) => (
-              <div key={card.title} className="trust-card">
-                <div className="mini-icon-wrap alt">
-                  <ShieldCheck size={22} />
-                </div>
-                <h3>{card.title}</h3>
-                <p>{card.text}</p>
-              </div>
+            {audienceList.map(({ label, icon: Icon }) => (
+              <span key={label} className="audience-pill">
+                <Icon size={17} strokeWidth={2} aria-hidden="true" />
+                {label}
+              </span>
             ))}
           </div>
         </div>

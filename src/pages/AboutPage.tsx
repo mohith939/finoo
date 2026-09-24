@@ -1,4 +1,4 @@
-import { ArrowRight, BriefcaseBusiness, CheckCircle2, FileText, ShieldCheck, Sparkles } from 'lucide-react'
+import { ArrowRight, BriefcaseBusiness, Building2, CheckCircle2, Factory, FileText, Globe2, ShieldCheck, ShoppingBag, Sparkles, Store, TrendingUp, Utensils } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const principles = [
@@ -8,7 +8,17 @@ const principles = [
   { title: 'One place to start', text: 'Registrations, compliance, certificates, and websites can begin with one simple conversation.', icon: ShieldCheck },
 ]
 
-const audiences = ['Startups and founders', 'Small businesses', 'Traders and manufacturers', 'Food businesses', 'Importers and exporters', 'Service businesses']
+const audiences = [
+  { label: 'Startups and founders', icon: Sparkles },
+  { label: 'Small businesses', icon: Building2 },
+  { label: 'Traders and manufacturers', icon: Factory },
+  { label: 'Food businesses', icon: Utensils },
+  { label: 'Importers and exporters', icon: Globe2 },
+  { label: 'Service businesses', icon: BriefcaseBusiness },
+  { label: 'E-commerce brands', icon: ShoppingBag },
+  { label: 'Consultants', icon: TrendingUp },
+  { label: 'Local shops', icon: Store },
+]
 
 export function AboutPage() {
   return (
@@ -64,7 +74,12 @@ export function AboutPage() {
             <p>Our services are designed for people who need a clear place to begin, whether they are launching, formalizing, or growing.</p>
           </div>
           <div className="about-audience-list">
-            {audiences.map((audience) => <span key={audience}>{audience}</span>)}
+            {audiences.map(({ label, icon: Icon }) => (
+              <span key={label}>
+                <Icon size={16} strokeWidth={2} aria-hidden="true" />
+                {label}
+              </span>
+            ))}
           </div>
         </div>
       </section>
