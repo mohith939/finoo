@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { Phone, Mail } from 'lucide-react'
 import { WhatsAppIcon } from '../components/WhatsAppIcon'
+import { services } from '../data/services'
 
 export function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
@@ -82,12 +83,9 @@ export function ContactPage() {
                 Service Needed
                 <select name="service">
                   <option value="">Select a service</option>
-                  <option value="company-registration">Company Registration</option>
-                  <option value="gst-registration-filings">GST Registration & Filings</option>
-                  <option value="trademark-registration">Trademark Registration</option>
-                  <option value="website-design-development">Website Design & Development</option>
-                  <option value="fssai-registration">FSSAI Registration</option>
-                  <option value="iec-import-export">IEC / Import-Export</option>
+                  {services.map((service) => (
+                    <option key={service.slug} value={service.slug}>{service.name}</option>
+                  ))}
                 </select>
               </label>
 

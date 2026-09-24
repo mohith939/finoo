@@ -26,7 +26,7 @@ export function AllServicesPage() {
         </div>
       </section>
 
-      <section className="section-block">
+      <section className="section-block all-services-section">
         <div className="container">
           <div className="services-toolbar">
             <div className="search-input-wrap">
