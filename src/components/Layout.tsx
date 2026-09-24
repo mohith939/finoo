@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { FinsticsLogo } from './FinsticsLogo'
 import { WhatsAppIcon } from './WhatsAppIcon'
+import ScrollToTop from './ScrollToTop'
 
 const navItems = [
   { label: 'Home', to: '/' },
@@ -18,6 +19,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <>
+      <ScrollToTop />
       <header className="site-header">
         <div className="container header-inner">
           <Link to="/" className="header-brand" aria-label="Finstics home">

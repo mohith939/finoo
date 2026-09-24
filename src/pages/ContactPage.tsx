@@ -1,7 +1,17 @@
 import { useState, type FormEvent } from 'react'
 import { Phone, Mail } from 'lucide-react'
 import { WhatsAppIcon } from '../components/WhatsAppIcon'
-import { services } from '../data/services'
+
+const serviceOptions = [
+  { value: 'company', label: 'Company' },
+  { value: 'gst', label: 'GST' },
+  { value: 'fssai', label: 'FSSAI' },
+  { value: 'trademark', label: 'Trademark' },
+  { value: 'iso', label: 'ISO' },
+  { value: 'website', label: 'Website' },
+  { value: 'business-certificates', label: 'Business Certificates' },
+  { value: 'others', label: 'Others' },
+]
 
 export function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
@@ -79,12 +89,12 @@ export function ContactPage() {
                 <input type="text" name="business" placeholder="Business name" />
               </label>
 
-              <label>
+              <label className="service-field">
                 Service Needed
-                <select name="service">
+                <select name="service" className="service-select">
                   <option value="">Select a service</option>
-                  {services.map((service) => (
-                    <option key={service.slug} value={service.slug}>{service.name}</option>
+                  {serviceOptions.map((service) => (
+                    <option key={service.value} value={service.value}>{service.label}</option>
                   ))}
                 </select>
               </label>

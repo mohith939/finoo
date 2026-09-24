@@ -57,7 +57,7 @@ export function ServicePage() {
 
   return (
     <>
-      <section className="page-hero service-hero">
+      <section className="page-hero service-hero service-page-section">
         <div className="container service-hero-grid">
           <div>
             <span className="eyebrow eyebrow-line">{service.category}</span>
@@ -83,7 +83,7 @@ export function ServicePage() {
         </div>
       </section>
 
-      <section className="section-block">
+      <section className="section-block service-page-section">
         <div className="container narrow">
           <div className="service-details-quick">
             <div className="quick-info-box">
@@ -102,7 +102,7 @@ export function ServicePage() {
         </div>
       </section>
 
-      <section className="section-block">
+      <section className="section-block service-page-section">
         <div className="container narrow">
           <div className="content-section">
             <h2>What is this service?</h2>
@@ -111,7 +111,7 @@ export function ServicePage() {
         </div>
       </section>
 
-      <section className="section-block soft-bg">
+      <section className="section-block soft-bg service-page-section">
         <div className="container narrow">
           <div className="content-section">
             <h2>Who needs it?</h2>
@@ -127,7 +127,7 @@ export function ServicePage() {
         </div>
       </section>
 
-      <section className="section-block">
+      <section className="section-block service-page-section">
         <div className="container narrow">
           <div className="content-section">
             <h2>Documents / information required</h2>
@@ -143,7 +143,7 @@ export function ServicePage() {
         </div>
       </section>
 
-      <section className="section-block soft-bg">
+      <section className="section-block soft-bg service-page-section">
         <div className="container narrow">
           <div className="content-section">
             <h2>How the process works</h2>
@@ -160,7 +160,7 @@ export function ServicePage() {
         </div>
       </section>
 
-      <section className="section-block">
+      <section className="section-block service-page-section">
         <div className="container narrow">
           <div className="content-section">
             <h2>Why use Finstics?</h2>
@@ -176,7 +176,7 @@ export function ServicePage() {
         </div>
       </section>
 
-      <section className="section-block soft-bg">
+      <section className="section-block soft-bg service-page-section">
         <div className="container narrow">
           <div className="content-section">
             <h2>Frequently asked questions</h2>
@@ -195,7 +195,7 @@ export function ServicePage() {
         </div>
       </section>
 
-      <section className="section-block">
+      <section className="section-block service-page-section">
         <div className="container narrow">
           <div className="content-section">
             <h2>Related services</h2>
@@ -208,7 +208,7 @@ export function ServicePage() {
         </div>
       </section>
 
-      <section className="section-block final-cta-section">
+      <section className="section-block final-cta-section service-page-section">
         <div className="container final-cta-box narrow">
           <div>
             <span className="eyebrow eyebrow-line">Need help with this?</span>
