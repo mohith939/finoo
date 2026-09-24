@@ -10,6 +10,9 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
@@ -22,5 +25,22 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": [
+    "src/components/ui",
+    "src/components/home",
+    "src/components/layout",
+    "src/components/icons",
+    "src/components/FloatingWhatsApp.tsx",
+    "src/components/NavLink.tsx",
+    "src/hooks",
+    "src/lib",
+    "src/integrations",
+    "src/pages/About.tsx",
+    "src/pages/Contact.tsx",
+    "src/pages/FAQ.tsx",
+    "src/pages/Index.tsx",
+    "src/pages/NotFound.tsx",
+    "src/pages/Services.tsx"
+  ]
 }
